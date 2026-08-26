@@ -13,7 +13,11 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
   }, []);
 
   const handleNav = (id: string) => {
-    goTo(id);
+    if (id === "/resultados") {
+      window.dispatchEvent(new CustomEvent("navigate", { detail: "/resultados" }));
+    } else {
+      goTo(id);
+    }
     setMenuOpen(false);
   };
 

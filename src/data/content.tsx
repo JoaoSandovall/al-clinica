@@ -67,8 +67,8 @@ export const faqs = [
   { q: "Vocês atendem convênios?", a: "Trabalhamos com os principais convênios e também oferecemos parcelamento próprio em até 12x sem juros para tratamentos fora do plano." }
 ];
 
-export const navLinks = ["Serviços", "Sobre", "Equipe", "Depoimentos", "Contato"];
-export const navIds   = ["servicos", "sobre",  "equipe", "depoimentos", "contato"];
+export const navLinks = ["Serviços", "Sobre", "Equipe", "Resultados", "Depoimentos", "Contato"];
+export const navIds   = ["servicos", "sobre",  "equipe", "/resultados", "depoimentos", "contato"];
 
 export const clinicalCases = [
   {
