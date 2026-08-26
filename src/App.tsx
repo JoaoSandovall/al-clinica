@@ -65,22 +65,6 @@ export default function App() {
       <FAQ />
       <Contact />
       <Footer />
-
-      <style>{`
-        @media (max-width: 768px) {
-          .hero-grid    { grid-template-columns: 1fr !important; }
-          .about-grid   { grid-template-columns: 1fr !important; }
-          .contact-grid { grid-template-columns: 1fr !important; }
-          .footer-grid  { grid-template-columns: 1fr !important; }
-        }
-        @media (max-width: 900px) {
-          [style*="repeat(3, 1fr)"] { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 580px) {
-          [style*="repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
-        }
-        .service-card:hover .card-cta { opacity: 1 !important; }
-      `}</style>
     </div>
   );
 }

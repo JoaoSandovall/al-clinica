@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Header } from "../sections/Header";
 import { Footer } from "../sections/Footer";
-import { serif } from "../../data/content";
+import { serif, clinicalCases } from "../../data/content";
 
-function BeforeAfterSlider({ beforeImg, afterImg, beforeFilter = "", afterFilter = "" }: { beforeImg: string, afterImg: string, beforeFilter?: string, afterFilter?: string }) {
+function BeforeAfterSlider({ beforeImg, afterImg }: { beforeImg: string, afterImg: string }) {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   return (
@@ -13,7 +13,6 @@ function BeforeAfterSlider({ beforeImg, afterImg, beforeFilter = "", afterFilter
         src={afterImg} 
         alt="Resultado Depois" 
         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
-        style={{ filter: afterFilter }}
         draggable={false} 
       />
 
@@ -22,7 +21,6 @@ function BeforeAfterSlider({ beforeImg, afterImg, beforeFilter = "", afterFilter
         alt="Situação Antes" 
         className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
         style={{ 
-          filter: beforeFilter,
           clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` 
         }} 
         draggable={false} 
@@ -46,6 +44,7 @@ function BeforeAfterSlider({ beforeImg, afterImg, beforeFilter = "", afterFilter
         value={sliderPosition} 
         onChange={(e) => setSliderPosition(Number(e.target.value))} 
         className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-10 m-0 p-0" 
+        aria-label="Controle deslizante de antes e depois"
       />
 
       <div className="absolute top-5 left-5 bg-black/60 text-[#FDFCFA] text-[0.65rem] font-bold tracking-[0.15em] uppercase px-3 py-1.5 rounded backdrop-blur-md pointer-events-none">
@@ -57,49 +56,6 @@ function BeforeAfterSlider({ beforeImg, afterImg, beforeFilter = "", afterFilter
     </div>
   );
 }
-
-const clinicalCases = [
-  {
-    category: "Lentes de Contato Dental",
-    duration: "Planejamento + 2 Sessões",
-    complaint: "Dentes amarelados, curtos, com desgaste nas bordas incisais e sorriso tímido.",
-    procedure: "Aplicação de 10 facetas de porcelana ultra-finas (cor BL2). Devolvemos proporção, tamanho e brilho natural à arcada superior.",
-    beforeImg: "/lentesantes.jpg",
-    afterImg: "/lentesdepois.jpg",
-    beforeFilter: "", 
-    afterFilter: "",
-  },
-  {
-    category: "Clareamento a Laser",
-    duration: "Sessão Única (45 min)",
-    complaint: "Escurecimento severo do esmalte devido ao consumo contínuo de café e tabagismo ao longo dos anos.",
-    procedure: "Protocolo de clareamento de consultório com Peróxido de Hidrogênio 35% ativado por luz LED em 3 ciclos de 15 minutos.",
-    beforeImg: "/clareamentoantes.jpg",
-    afterImg: "/clareamentodepois.jpg",
-    beforeFilter: "", 
-    afterFilter: "",
-  },
-  {
-    category: "Ortodontia com Alinhadores",
-    duration: "8 Meses de Tratamento",
-    complaint: "Apinhamento (dentes encavalados) na região anterior inferior e sorriso metálico com aparelho antigo.",
-    procedure: "Remoção do aparelho fixo e escaneamento digital em 3D. Tratamento finalizado exclusivamente com alinhadores invisíveis.",
-    beforeImg: "/alinhamentoantes.jpg",
-    afterImg: "/alinhamentodepois.jpg",
-    beforeFilter: "",
-    afterFilter: "",
-  },
-  {
-    category: "Reabilitação Estética",
-    duration: "3 Sessões",
-    complaint: "Sorriso excessivamente gengival e presença de resinas antigas, opacas e manchadas nos dentes da frente.",
-    procedure: "Gengivoplastia para aumento de coroa clínica (remoção do excesso de gengiva) e substituição por resinas compostas de alta estética.",
-    beforeImg: "/gengivoantes.jpg",
-    afterImg: "/gengivodepois.jpg",
-    beforeFilter: "",
-    afterFilter: "",
-  }
-];
 
 export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
   return (
@@ -129,8 +85,6 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
               <BeforeAfterSlider 
                 beforeImg={item.beforeImg} 
                 afterImg={item.afterImg} 
-                beforeFilter={item.beforeFilter}
-                afterFilter={item.afterFilter}
               />
 
               <div className="p-8 md:p-10 flex flex-col flex-grow">

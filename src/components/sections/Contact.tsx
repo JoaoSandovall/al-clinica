@@ -9,7 +9,6 @@ export function Contact() {
     <Section id="contato" style={{ background: "#FDFCFA" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
         
-        {/* Cabeçalho da Seção */}
         <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
           <span className="eyebrow">Fale conosco</span>
           <h2 style={{ ...serif, fontWeight: 400, fontSize: "clamp(2.2rem, 3.5vw, 3.4rem)", color: "#1A1A18", marginTop: "1rem" }}>
@@ -20,7 +19,6 @@ export function Contact() {
           </p>
         </div>
 
-        {/* Card Principal Dividido */}
         <div className="reveal" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
@@ -31,7 +29,6 @@ export function Contact() {
           border: "1px solid rgba(27,58,75,.05)"
         }}>
           
-          {/* Painel Esquerdo (Escuro) */}
           <div style={{ background: "#1B3A4B", color: "#FDFCFA", padding: "4rem 3rem", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div>
               <h3 style={{ ...serif, fontSize: "1.8rem", fontWeight: 400, marginBottom: "2.5rem" }}>Informações de Contato</h3>
@@ -65,7 +62,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Painel Direito (Formulário) */}
           <div style={{ padding: "4rem 3rem" }}>
             <form
               onSubmit={(e) => { e.preventDefault(); alert("Mensagem enviada! Entraremos em contato em breve."); }}

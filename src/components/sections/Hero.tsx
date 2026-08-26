@@ -4,7 +4,6 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
   return (
     <div style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
       
-      {/* Background */}
       <div style={{ position: "absolute", inset: 0 }}>
         <img
           src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1800&h=1000&fit=crop&auto=format"
@@ -14,7 +13,6 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
         <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
       </div>
 
-      {/* Conteúdo Central Responsivo */}
       <div className="w-full max-w-[1280px] mx-auto relative px-6 md:px-10 pt-32 pb-24 md:pt-40 md:pb-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center z-10">
         
         <div>
@@ -47,7 +45,6 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
           </div>
         </div>
 
-        {/* Imagem Flutuante Corrigida (Largura ampla e proporcional) */}
         <div className="hidden md:flex justify-center relative">
           <div className="relative w-[340px] h-[480px]">
             <img
@@ -58,13 +55,11 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
             />
             <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_rgba(27,58,75,.12)]" />
             
-            {/* Stat float esquerdo */}
             <div className="stat-float absolute top-12 -left-12 bg-[#FDFCFA]/95 border border-[rgba(27,58,75,.1)] rounded-xl py-3 px-5 shadow-[0_8px_32px_rgba(27,58,75,.12)] backdrop-blur-md">
                <div style={{ ...serif, fontWeight: 500, fontSize: "1.25rem", color: "#1B3A4B" }}>4.9 ★</div>
                <div className="text-[0.7rem] text-[#8A97A5] mt-1">Google Reviews</div>
             </div>
 
-            {/* Stat float direito */}
             <div className="stat-float absolute bottom-16 -right-10 bg-[#FDFCFA]/95 border border-[rgba(27,58,75,.1)] rounded-xl py-3 px-5 shadow-[0_8px_32px_rgba(27,58,75,.12)] backdrop-blur-md">
                <div style={{ ...serif, fontWeight: 500, fontSize: "1.25rem", color: "#1B3A4B" }}>1ª</div>
                <div className="text-[0.7rem] text-[#8A97A5] mt-1">Consulta gratuita</div>
