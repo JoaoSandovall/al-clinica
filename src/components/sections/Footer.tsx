@@ -2,11 +2,13 @@ import { serif, services } from "../../data/content";
 
 export function Footer() {
   return (
-    <footer style={{ background: "#F3F0EA", borderTop: "1px solid rgba(27,58,75,.1)", padding: "4.5rem 2.5rem 2.5rem" }}>
+    <footer style={{ background: "#F3F0EA", borderTop: "1px solid rgba(27,58,75,.1)" }} className="pt-20 pb-10 px-6 md:px-10">
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "3rem", marginBottom: "3.5rem" }}
-          className="footer-grid">
-          <div>
+        
+        {/* Grid responsivo via Tailwind */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-14">
+          
+          <div className="md:col-span-2">
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "1.25rem" }}>
               <div style={{ width: 28, height: 28, borderRadius: 5, background: "#1B3A4B", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg viewBox="0 0 24 24" fill="none" width={13} height={13} stroke="#FDFCFA" strokeWidth="1.8">
@@ -31,6 +33,7 @@ export function Footer() {
               ))}
             </div>
           </div>
+
           <div>
             <div style={{ fontSize: ".68rem", fontWeight: 500, letterSpacing: ".18em", textTransform: "uppercase", color: "#1A1A18", marginBottom: "1.25rem" }}>Tratamentos</div>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
@@ -44,6 +47,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
           <div>
             <div style={{ fontSize: ".68rem", fontWeight: 500, letterSpacing: ".18em", textTransform: "uppercase", color: "#1A1A18", marginBottom: "1.25rem" }}>Contato</div>
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem", color: "#8A97A5", fontSize: ".875rem", fontWeight: 300 }}>
@@ -60,6 +64,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
         <div style={{ borderTop: "1px solid rgba(27,58,75,.08)", paddingTop: "1.75rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
           <p style={{ color: "#A8B2BC", fontSize: ".75rem", fontWeight: 300 }}>© 2025 Lumina Odontologia. Todos os direitos reservados.</p>
           <p style={{ color: "#A8B2BC", fontSize: ".75rem", fontWeight: 300 }}>CRO-SP ativo | CNPJ 00.000.000/0001-00</p>

@@ -6,7 +6,7 @@ export function FAQ() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <Section style={{ padding: "8rem 2.5rem" }}>
+    <Section>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "4.5rem" }}>
           <div className="reveal" style={{ display: "flex", justifyContent: "center" }}>

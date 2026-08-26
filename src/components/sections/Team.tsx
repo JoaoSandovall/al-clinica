@@ -3,7 +3,7 @@ import { serif, team } from "../../data/content";
 
 export function Team() {
   return (
-    <Section id="equipe" style={{ padding: "8rem 2.5rem" }}>
+    <Section id="equipe">
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "4.5rem" }}>
           <div className="reveal" style={{ display: "flex", justifyContent: "center" }}>

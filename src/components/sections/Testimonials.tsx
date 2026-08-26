@@ -3,7 +3,7 @@ import { serif, testimonials } from "../../data/content";
 
 export function Testimonials() {
   return (
-    <Section id="depoimentos" style={{ padding: "7rem 2.5rem", background: "#FDFCFA" }}>
+    <Section id="depoimentos" style={{ background: "#FDFCFA" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ maxWidth: 520, marginBottom: "4.5rem" }}>
           <div className="reveal"><span className="eyebrow">Depoimentos</span></div>

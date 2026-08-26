@@ -3,7 +3,7 @@ import { serif } from "../../data/content";
 
 export function About({ goTo }: { goTo: (id: string) => void }) {
   return (
-    <Section id="sobre" style={{ padding: "7rem 2.5rem", background: "#FDFCFA" }}>
+    <Section id="equipe">
       <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}
         className="about-grid">
         <div className="reveal-l" style={{ position: "relative" }}>

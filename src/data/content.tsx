@@ -1,14 +1,39 @@
 import { CSSProperties } from "react";
+import { Shield, Sparkles, Layers, ScanFace, Activity, Smile } from "lucide-react";
 
 export const serif: CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 
 export const services = [
-  { icon: "✧", title: "Implante Dentário", desc: "Substituição permanente de dentes perdidos com titânio de alta pureza e coroas que imitam perfeitamente o dente natural." },
-  { icon: "✦", title: "Clareamento Dental", desc: "Protocolo clínico de clareamento profissional com luz LED de última geração, resultado visível em uma única sessão." },
-  { icon: "⬡", title: "Facetas de Porcelana", desc: "Laminados ultra-finos que transformam a estética do sorriso com precisão milimétrica e durabilidade de décadas." },
-  { icon: "⭘", title: "Ortodontia / Alinhadores", desc: "Alinhamento com aparelhos tradicionais ou alinhadores transparentes personalizados para cada fase do tratamento." },
-  { icon: "⬟", title: "Tratamento de Canal", desc: "Endodontia com rotação mecanizada e localizador apical digital — procedimento rápido e praticamente sem dor." },
-  { icon: "◇", title: "Odontopediatria", desc: "Ambiente acolhedor e técnicas gentis para que crianças tenham uma relação saudável com a saúde bucal desde cedo." },
+  { 
+    icon: <Shield size={28} strokeWidth={1.2} />, 
+    title: "Implante Dentário", 
+    desc: "Substituição permanente de dentes perdidos com titânio de alta pureza e coroas que imitam perfeitamente o dente natural." 
+  },
+  { 
+    icon: <Sparkles size={28} strokeWidth={1.2} />, 
+    title: "Clareamento Dental", 
+    desc: "Protocolo clínico de clareamento profissional com luz LED de última geração, resultado visível em uma única sessão." 
+  },
+  { 
+    icon: <Layers size={28} strokeWidth={1.2} />, 
+    title: "Facetas de Porcelana", 
+    desc: "Laminados ultra-finos que transformam a estética do sorriso com precisão milimétrica e durabilidade de décadas." 
+  },
+  { 
+    icon: <ScanFace size={28} strokeWidth={1.2} />, 
+    title: "Ortodontia / Alinhadores", 
+    desc: "Alinhamento com aparelhos tradicionais ou alinhadores transparentes personalizados para cada fase do tratamento." 
+  },
+  { 
+    icon: <Activity size={28} strokeWidth={1.2} />, 
+    title: "Tratamento de Canal", 
+    desc: "Endodontia com rotação mecanizada e localizador apical digital — procedimento rápido e praticamente sem dor." 
+  },
+  { 
+    icon: <Smile size={28} strokeWidth={1.2} />, 
+    title: "Odontopediatria", 
+    desc: "Ambiente acolhedor e técnicas gentis para que crianças tenham uma relação saudável com a saúde bucal desde cedo." 
+  },
 ];
 
 export const testimonials = [
