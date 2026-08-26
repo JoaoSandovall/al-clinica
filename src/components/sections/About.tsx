@@ -1,5 +1,4 @@
 import { Section } from "../ui/Section";
-import { serif } from "../../data/content";
 
 export function About({ goTo }: { goTo: (id: string) => void }) {
   return (
@@ -14,16 +13,15 @@ export function About({ goTo }: { goTo: (id: string) => void }) {
               style={{ width: "100%", height: 460, objectFit: "cover", display: "block", filter: "brightness(.97) saturate(.88)" }}
             />
           </div>
-          <div style={{ position: "absolute", bottom: -20, right: -20, width: 100, height: 100, border: "1px solid rgba(27,58,75,.18)", borderRadius: 12, pointerEvents: "none" }} />
-          <div style={{ position: "absolute", top: -20, left: -20, width: 70, height: 70, border: "1px solid rgba(27,58,75,.12)", borderRadius: 8, pointerEvents: "none" }} />
+          <div style={{ position: "absolute", bottom: -20, right: -20, width: 100, height: 100, border: "1px solid rgba(92,49,54,.18)", borderRadius: 12, pointerEvents: "none" }} />
+          <div style={{ position: "absolute", top: -20, left: -20, width: 70, height: 70, border: "1px solid rgba(92,49,54,.12)", borderRadius: 8, pointerEvents: "none" }} />
         </div>
         <div>
-          <div className="reveal"><span className="eyebrow">Sobre a clínica</span></div>
           <h2
             className="reveal"
-            style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2rem, 3vw, 3.2rem)", color: "#1A1A18", marginBottom: "2rem" }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.1, fontSize: "clamp(2.2rem, 4vw, 3.5rem)", color: "#2B1C1D", marginBottom: "1.5rem" }}
           >
-            Mais de 18 anos cuidando de sorrisos em São Paulo
+            Mais de 18 anos de excelência clínica.
           </h2>
           <p className="reveal" style={{ color: "#4A5568", lineHeight: 1.85, marginBottom: "1.2rem", fontWeight: 300 }}>
             A Lumina Odontologia nasceu com uma proposta clara: unir rigor técnico e cuidado humano. Nossos dentistas passam por atualização contínua em centros de referência nacionais e internacionais.
@@ -39,9 +37,9 @@ export function About({ goTo }: { goTo: (id: string) => void }) {
               ["Horários flexíveis", "Seg-Sáb, das 8h às 20h"],
             ].map(([t, d]) => (
               <div key={t} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
-                <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#1B3A4B", opacity: .55, marginTop: "0.45rem", flexShrink: 0 }} />
+                <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#D49A89", opacity: 1, marginTop: "0.45rem", flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: ".875rem", fontWeight: 500, color: "#1A1A18" }}>{t}</div>
+                  <div style={{ fontSize: ".875rem", fontWeight: 500, color: "#2B1C1D" }}>{t}</div>
                   <div style={{ fontSize: ".78rem", color: "#8A97A5", marginTop: 2, lineHeight: 1.6, fontWeight: 300 }}>{d}</div>
                 </div>
               </div>

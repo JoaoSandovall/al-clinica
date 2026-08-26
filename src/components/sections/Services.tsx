@@ -12,9 +12,9 @@ export function Services() {
           </div>
           <h2
             className="reveal mt-2"
-            style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.2rem, 3.5vw, 3.4rem)", color: "#1A1A18", marginBottom: "1.25rem" }}
+            style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.2rem, 3.5vw, 3.4rem)", color: "#2B1C1D", marginBottom: "1.25rem" }}
           >
-            Cada sorriso merece <em style={{ color: "#1B3A4B" }}>atenção única</em>
+            Cada sorriso merece <em style={{ color: "#5C3136" }}>atenção única</em>
           </h2>
           <p className="reveal" style={{ color: "#4A5568", fontSize: "1.05rem", lineHeight: 1.8, fontWeight: 300 }}>
             Do diagnóstico ao acompanhamento pós-tratamento, cuidamos de você com protocolos clínicos validados e equipamentos de última geração.
@@ -25,21 +25,21 @@ export function Services() {
           {services.map((s) => (
             <div 
               key={s.title} 
-              className="reveal group flex flex-col h-full bg-white rounded-2xl p-8 md:p-10 cursor-pointer border border-[rgba(27,58,75,.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(27,58,75,0.12)]"
+              className="reveal group flex flex-col h-full bg-white rounded-2xl p-8 md:p-10 cursor-pointer border border-[rgba(92,49,54,.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_rgba(92,49,54,0.12)]"
             >
               
-              <div className="w-14 h-14 rounded-xl bg-[#F3F0EA] text-[#1B3A4B] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#1B3A4B] group-hover:text-[#FDFCFA]">
+              <div className="w-14 h-14 rounded-xl bg-[#FDFBF9] text-[#5C3136] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#5C3136] group-hover:text-[#FFFFFF]">
                 {s.icon}
               </div>
 
-              <h3 style={{ ...serif, fontWeight: 500, fontSize: "1.35rem", color: "#1A1A18", marginBottom: "0.75rem" }}>
+              <h3 style={{ ...serif, fontWeight: 500, fontSize: "1.35rem", color: "#2B1C1D", marginBottom: "0.75rem" }}>
                 {s.title}
               </h3>
               <p className="text-[#5A6778] text-[0.95rem] leading-relaxed font-light flex-grow">
                 {s.desc}
               </p>
 
-              <div className="mt-8 pt-6 border-t border-[rgba(27,58,75,.06)] flex items-center text-[0.75rem] font-medium tracking-wider uppercase text-[#1B3A4B] opacity-60 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="mt-8 pt-6 border-t border-[rgba(92,49,54,.06)] flex items-center text-[0.75rem] font-medium tracking-wider uppercase text-[#D49A89] opacity-80 transition-opacity duration-300 group-hover:opacity-100">
                 <span className="mr-3">Saiba mais</span>
                 <svg 
                   className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-2" 
