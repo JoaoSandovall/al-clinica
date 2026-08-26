@@ -1,0 +1,10 @@
+{
+  "description": "Create visually stunning landing pages for dental practices featuring engaging animations and design inspiration to attract and convert potential patients.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
