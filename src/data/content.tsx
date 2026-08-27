@@ -1,6 +1,16 @@
 import { CSSProperties } from "react";
 import { Shield, Sparkles, Layers, ScanFace, Activity, Smile } from "lucide-react";
 
+// IMPORTAÇÃO DAS IMAGENS DIRETAMENTE DA PASTA ASSETS
+import lentesAntes from "../assets/lentes-antes.jpg";
+import lentesDepois from "../assets/lentes-depois.jpg";
+import clareamentoAntes from "../assets/clareamento-antes.jpg";
+import clareamentoDepois from "../assets/clareamento-depois.jpg";
+import alinhamentoAntes from "../assets/alinhamento-antes.jpg";
+import alinhamentoDepois from "../assets/alinhamento-depois.jpg";
+import gengivoAntes from "../assets/gengivo-antes.jpg";
+import gengivoDepois from "../assets/gengivo-depois.jpg";
+
 export const serif: CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 
 export const services = [
@@ -76,31 +86,31 @@ export const clinicalCases = [
     duration: "Planejamento + 2 Sessões",
     complaint: "Dentes amarelados, curtos, com desgaste nas bordas incisais e sorriso tímido.",
     procedure: "Aplicação de 10 facetas de porcelana ultra-finas (cor BL2). Devolvemos proporção, tamanho e brilho natural à arcada superior.",
-    beforeImg: "/lentes-antes.jpg",
-    afterImg: "/lentes-depois.jpg"
+    beforeImg: lentesAntes,
+    afterImg: lentesDepois
   },
   {
     category: "Clareamento a Laser",
     duration: "Sessão Única (45 min)",
     complaint: "Escurecimento severo do esmalte devido ao consumo contínuo de café e tabagismo ao longo dos anos.",
     procedure: "Protocolo de clareamento de consultório com Peróxido de Hidrogênio 35% ativado por luz LED em 3 ciclos de 15 minutos.",
-    beforeImg: "/clareamento-antes.jpg",
-    afterImg: "/clareamento-depois.jpg"
+    beforeImg: clareamentoAntes,
+    afterImg: clareamentoDepois
   }, 
   {
     category: "Ortodontia com Alinhadores",
     duration: "8 Meses de Tratamento",
     complaint: "Apinhamento (dentes encavalados) na região anterior inferior e sorriso metálico com aparelho antigo.",
     procedure: "Remoção do aparelho fixo e escaneamento digital em 3D. Tratamento finalizado exclusivamente com alinhadores invisíveis.",
-    beforeImg: "/alinhamento-antes.jpg",
-    afterImg: "/alinhamento-depois.jpg"
+    beforeImg: alinhamentoAntes,
+    afterImg: alinhamentoDepois
   },
   {
     category: "Reabilitação Estética",
     duration: "3 Sessões",
     complaint: "Sorriso excessivamente gengival e presença de resinas antigas, opacas e manchadas nos dentes da frente.",
     procedure: "Gengivoplastia para aumento de coroa clínica (remoção do excesso de gengiva) e substituição por resinas compostas de alta estética.",
-    beforeImg: "/gengivo-antes.jpg",
-    afterImg: "/gengivo-depois.jpg"
+    beforeImg: gengivoAntes,
+    afterImg: gengivoDepois
   }
 ];
