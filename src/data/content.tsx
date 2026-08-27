@@ -1,15 +1,14 @@
 import { CSSProperties } from "react";
 import { Shield, Sparkles, Layers, ScanFace, Activity, Smile } from "lucide-react";
 
-// IMPORTAÇÃO DAS IMAGENS DIRETAMENTE DA PASTA ASSETS
-import lentesAntes from "../assets/lentes-antes.jpg";
-import lentesDepois from "../assets/lentes-depois.jpg";
-import clareamentoAntes from "../assets/clareamento-antes.jpg";
-import clareamentoDepois from "../assets/clareamento-depois.jpg";
-import alinhamentoAntes from "../assets/alinhamento-antes.jpg";
-import alinhamentoDepois from "../assets/alinhamento-depois.jpg";
-import gengivoAntes from "../assets/gengivo-antes.jpg";
-import gengivoDepois from "../assets/gengivo-depois.jpg";
+import lentesAntes from "../imagens/lentes-antes.jpg";
+import lentesDepois from "../imagens/lentes-depois.jpg";
+import clareamentoAntes from "../imagens/clareamento-antes.jpg";
+import clareamentoDepois from "../imagens/clareamento-depois.jpg";
+import alinhamentoAntes from "../imagens/alinhamento-antes.jpg";
+import alinhamentoDepois from "../imagens/alinhamento-depois.jpg";
+import gengivoAntes from "../imagens/gengivo-antes.jpg";
+import gengivoDepois from "../imagens/gengivo-depois.jpg";
 
 export const serif: CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 
