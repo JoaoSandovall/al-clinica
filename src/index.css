@@ -129,6 +129,21 @@ body {
 .stat-float { animation: floatY 4.5s ease-in-out infinite; }
 .stat-float:nth-child(2) { animation-delay: 1.8s; }
 
+/* Reveal de título palavra por palavra: cada palavra "sobe" de dentro
+   do próprio contêiner com overflow escondido. */
+@keyframes wordUp { from { opacity: 0; transform: translateY(115%); } to { opacity: 1; transform: translateY(0); } }
+.word-reveal { animation: wordUp .85s cubic-bezier(.22,1,.36,1) both; }
+
+/* Transição suave entre páginas (Home <-> Resultados). */
+@keyframes pageFadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(14px); } }
+@keyframes pageFadeIn  { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.page-transition-out { animation: pageFadeOut .26s cubic-bezier(.22,1,.36,1) both; }
+.page-transition-in  { animation: pageFadeIn  .34s cubic-bezier(.22,1,.36,1) both; }
+
+/* Tilt 3D nos cards de serviço: transição rápida ao mover o mouse,
+   e uma transição levemente mais lenta ao soltar (volta ao normal). */
+.tilt-card { transition: transform .15s ease-out, box-shadow .5s ease, border-color .5s ease; transform-style: preserve-3d; }
+
 .field {
   width: 100%; background: #FDFBF9; border: 1px solid rgba(92,49,54,.16); border-radius: 6px;
   padding: .8rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: .875rem; color: #2B1C1D;

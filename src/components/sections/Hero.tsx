@@ -1,15 +1,99 @@
+import { useEffect, useState } from "react";
 import { serif } from "../../data/content";
+import { useCountUp } from "../../hooks/useCountUp";
+
+const stats = [
+  { target: 18, suffix: "+", label: "anos de experiência" },
+  { target: 9800, suffix: "+", label: "pacientes atendidos", thousands: true },
+  { target: 98, suffix: "%", label: "satisfação" },
+];
+
+function StatCounter({ target, suffix, label, thousands }: { target: number; suffix: string; label: string; thousands?: boolean }) {
+  const { value, ref } = useCountUp(target);
+  const display = thousands ? value.toLocaleString("pt-BR") : value;
+
+  return (
+    <div ref={ref}>
+      <div style={{ 
+        ...serif, 
+        fontWeight: 500, 
+        fontSize: "2rem", 
+        color: "#5C3136", 
+        lineHeight: 1,
+        fontVariantNumeric: "tabular-nums"
+      }}>
+        {display}{suffix}
+      </div>
+      <div style={{ fontSize: ".72rem", color: "#8A97A5", marginTop: 6, letterSpacing: ".05em" }}>{label}</div>
+    </div>
+  );
+}
+
+// Envolve cada palavra num contêiner com overflow escondido, para que a
+// palavra "suba" de dentro da própria linha do texto (efeito editorial).
+function WordReveal({ text, delayStart = 0, italic = false }: { text: string; delayStart?: number; italic?: boolean }) {
+  const words = text.split(" ");
+  return (
+    <>
+      {words.map((word, i) => (
+        <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}>
+          <span
+            className="word-reveal"
+            style={{
+              display: "inline-block",
+              animationDelay: `${delayStart + i * 90}ms`,
+              fontStyle: italic ? "italic" : undefined,
+              color: italic ? "#5C3136" : undefined,
+            }}
+          >
+            {word}{i < words.length - 1 ? "\u00A0" : ""}
+          </span>
+        </span>
+      ))}
+    </>
+  );
+}
 
 export function Hero({ goTo }: { goTo: (id: string) => void }) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        setScrollY(window.scrollY);
+        raf = 0;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <div style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
       
       <div style={{ position: "absolute", inset: 0 }}>
-        <img
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1800&h=1000&fit=crop&auto=format"
-          alt="Clínica odontológica moderna"
-          style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(.98) saturate(.82)" }}
-        />
+        <div
+          style={{
+            position: "absolute",
+            top: -80,
+            left: 0,
+            right: 0,
+            bottom: -80,
+            transform: `translateY(${scrollY * 0.08}px)`,
+            willChange: "transform",
+          }}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1800&h=1000&fit=crop&auto=format"
+            alt="Clínica odontológica moderna"
+            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(.98) saturate(.82)" }}
+          />
+        </div>
         <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
       </div>
 
@@ -19,10 +103,10 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
             <span className="eyebrow">Odontologia de excelência</span>
           </div>
           <h1
-            className="anim-fade-up delay-300"
             style={{ ...serif, fontWeight: 400, lineHeight: 1.07, letterSpacing: "-.015em", fontSize: "clamp(2.7rem, 6vw, 5.5rem)", color: "#2B1C1D", marginBottom: "1.75rem" }}
           >
-            Seu sorriso, <em style={{ fontStyle: "italic", color: "#5C3136" }}>redefinido.</em>
+            <WordReveal text="Seu sorriso," delayStart={280} />{" "}
+            <WordReveal text="redefinido." delayStart={460} italic />
           </h1>
           <p className="anim-fade-up delay-400"
             style={{ color: "#4A5568", fontSize: "1.1rem", lineHeight: 1.8, maxWidth: 420, marginBottom: "2.5rem", fontWeight: 300 }}>
@@ -35,11 +119,14 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
           </div>
 
           <div className="anim-fade-up delay-700 flex flex-wrap gap-8 md:gap-10 pt-8 border-t border-[rgba(92,49,54,.14)]">
-            {[["18+", "anos de experiência"], ["9.800+", "pacientes atendidos"], ["98%", "satisfação"]].map(([num, label]) => (
-              <div key={label}>
-                <div style={{ ...serif, fontWeight: 500, fontSize: "2rem", color: "#5C3136", lineHeight: 1 }}>{num}</div>
-                <div style={{ fontSize: ".72rem", color: "#8A97A5", marginTop: 6, letterSpacing: ".05em" }}>{label}</div>
-              </div>
+            {stats.map((s, index) => (
+              <StatCounter 
+                key={s.label} 
+                target={s.target} 
+                suffix={s.suffix} 
+                label={s.label} 
+                thousands={s.thousands} 
+              />
             ))}
           </div>
         </div>

@@ -4,39 +4,52 @@ import { serif, team } from "../../data/content";
 export function Team() {
   return (
     <Section id="equipe">
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+      <div className="max-w-[1280px] mx-auto">
         
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "4.5rem" }} className="reveal">
-          <h2 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: "clamp(1.8rem, 3vw, 2.5rem)", letterSpacing: "-0.02em", color: "#2B1C1D" }}>
+        {/* Cabeçalho Editorial */}
+        <div className="flex items-end justify-between gap-8 mb-16 md:mb-20 reveal">
+          <h2 style={{ ...serif }} className="text-[2.4rem] md:text-[3.6rem] text-[#2B1C1D] leading-none whitespace-nowrap">
             Corpo Clínico
           </h2>
-          <div className="hidden md:block" style={{ width: "60%", height: "1px", background: "rgba(92,49,54,.1)", marginBottom: "0.8rem" }} />
+          <div className="hidden md:block flex-grow h-[1px] bg-[rgba(92,49,54,.15)] mb-3"></div>
         </div>
 
-        <div
-          className="stagger-children"
-          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.75rem" }}
-        >
+        {/* Grid de Retratos */}
+        <div className="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
           {team.map((dr) => (
-            <div key={dr.name} className="reveal" style={{ cursor: "pointer" }}>
-              <div style={{ borderRadius: 12, overflow: "hidden", marginBottom: "1.1rem", position: "relative" }}>
+            <div key={dr.name} className="reveal group cursor-pointer flex flex-col">
+              
+              {/* Foto com Overlay e Pill */}
+              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[3/4] border border-[rgba(92,49,54,.05)]">
                 <img
                   src={dr.img}
                   alt={dr.name}
-                  style={{ width: "100%", height: 340, objectFit: "cover", display: "block", filter: "brightness(.96) saturate(.85)", transition: "transform .5s ease" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.04)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  style={{ filter: "brightness(0.95) saturate(0.9)" }}
                 />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,26,24,.5) 0%, transparent 55%)" }} />
-                <div style={{ position: "absolute", bottom: 16, left: 18 }}>
-                  <span style={{ fontSize: ".62rem", color: "rgba(255,255,255,.8)", letterSpacing: ".15em", textTransform: "uppercase" }}>{dr.cro}</span>
+                {/* Gradiente escuro sutil para proteger a leitura do CRO */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-500" />
+                
+                {/* Badge do CRO (Glassmorphism) */}
+                <div className="absolute bottom-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-lg">
+                  <span className="text-[0.65rem] font-bold tracking-[0.2em] text-[#5C3136] uppercase">{dr.cro}</span>
                 </div>
               </div>
-              <div style={{ ...serif, fontWeight: 500, fontSize: "1.15rem", color: "#2B1C1D" }}>{dr.name}</div>
-              <div style={{ fontSize: ".875rem", color: "#8A97A5", marginTop: 3, fontWeight: 300 }}>{dr.specialty}</div>
+
+              {/* Informações com Guia Lateral */}
+              <div className="pl-4 border-l border-[#D49A89]/40 group-hover:border-[#5C3136] transition-colors duration-500">
+                <div style={{ ...serif }} className="text-2xl text-[#2B1C1D] group-hover:text-[#5C3136] transition-colors duration-500">
+                  {dr.name}
+                </div>
+                <div className="text-[0.75rem] font-medium tracking-widest uppercase text-[#8A97A5] mt-2">
+                  {dr.specialty}
+                </div>
+              </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </Section>
   );

@@ -6,11 +6,28 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Monitora o scroll
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Executa uma vez no load para garantir o estado inicial correto
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Trava o scroll do body APENAS quando o menu mobile está aberto
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = ""; // Reseta para o CSS padrão
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const handleNav = (id: string) => {
     if (id === "/resultados") {
@@ -23,8 +40,17 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
 
   return (
     <header
-      style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 50 }}
-      className={`transition-all duration-300 ${menuOpen ? "bg-[#FDFBF9]" : scrolled ? "header-scrolled" : ""}`}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        width: "100%",
+        zIndex: 9999, // Z-index máximo absoluto
+      }}
+      className={`transition-all duration-300 ${
+        menuOpen ? "bg-[#FDFBF9]" : scrolled ? "header-scrolled" : ""
+      }`}
     >
       <div className="px-6 md:px-10 max-w-[1280px] mx-auto flex items-center justify-between h-[4.75rem]">
         <div
@@ -73,20 +99,52 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
       </div>
 
       <div
-        className="md:hidden absolute left-0 w-full bg-[#FDFBF9] overflow-hidden transition-all duration-300 ease-in-out border-b border-[rgba(92,49,54,.05)] shadow-2xl"
-        style={{ top: "4.75rem", maxHeight: menuOpen ? "600px" : "0", opacity: menuOpen ? 1 : 0 }}
+        className="md:hidden absolute left-0 w-full bg-[#FDFBF9] shadow-2xl overflow-hidden"
+        style={{ 
+          top: "4.75rem", 
+          maxHeight: menuOpen ? "500px" : "0", 
+          opacity: menuOpen ? 1 : 0,
+          borderBottom: menuOpen ? "1px solid rgba(92,49,54,.05)" : "none",
+          transition: "max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease" 
+        }}
       >
         <div style={{ padding: "1.5rem 1.5rem 2.5rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
           {navLinks.map((label, i) => (
             <button
               key={label}
               onClick={() => handleNav(navIds[i])}
-              style={{ textAlign: "left", color: "#5C3136", fontWeight: 500, fontSize: "1.05rem", background: "none", border: "none", cursor: "pointer", fontFamily: "'DM Sans', sans-serif", padding: "0.5rem 0" }}
+              style={{ 
+                textAlign: "left", 
+                color: "#5C3136", 
+                fontWeight: 500, 
+                fontSize: "1.1rem", 
+                background: "none", 
+                border: "none", 
+                cursor: "pointer", 
+                fontFamily: "'DM Sans', sans-serif", 
+                padding: "0.5rem 0",
+                opacity: menuOpen ? 1 : 0,
+                transform: menuOpen ? "translateY(0)" : "translateY(15px)",
+                transition: "opacity 0.4s ease, transform 0.4s ease",
+                transitionDelay: menuOpen ? `${100 + i * 60}ms` : "0ms",
+              }}
             >
               {label}
             </button>
           ))}
-          <button className="btn-primary" onClick={() => handleNav("contato")} style={{ marginTop: "0.5rem", width: "100%", padding: "1rem" }}>
+          <button 
+            className="btn-primary" 
+            onClick={() => handleNav("contato")} 
+            style={{ 
+              marginTop: "0.5rem", 
+              width: "100%", 
+              padding: "1rem",
+              opacity: menuOpen ? 1 : 0,
+              transform: menuOpen ? "translateY(0)" : "translateY(15px)",
+              transition: "opacity 0.4s ease, transform 0.4s ease",
+              transitionDelay: menuOpen ? `${100 + navLinks.length * 60}ms` : "0ms",
+            }}
+          >
             Agendar consulta
           </button>
         </div>

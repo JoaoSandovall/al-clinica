@@ -15,6 +15,10 @@ import { ResultsPage } from "./components/pages/ResultsPage";
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  // displayPath só troca depois que a animação de saída termina, e stage
+  // controla se a página atual está entrando ou saindo.
+  const [displayPath, setDisplayPath] = useState(window.location.pathname);
+  const [stage, setStage] = useState<"in" | "out">("in");
 
   useEffect(() => {
     // 1. Lida com o botão de voltar/avançar do próprio navegador
@@ -25,7 +29,6 @@ export default function App() {
     const handleInternalNav = (e: any) => {
       window.history.pushState({}, "", e.detail);
       setCurrentPath(e.detail);
-      window.scrollTo(0, 0);
     };
     window.addEventListener("navigate", handleInternalNav);
 
@@ -35,30 +38,44 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (currentPath === displayPath) return;
+    setStage("out");
+    const t = setTimeout(() => {
+      setDisplayPath(currentPath);
+      window.scrollTo(0, 0);
+      setStage("in");
+    }, 260);
+    return () => clearTimeout(t);
+  }, [currentPath, displayPath]);
+
   const goTo = (id: string) => {
-    // Se estiver na galeria e clicar no menu, volta pra home primeiro
     if (currentPath.includes("resultados")) {
       window.dispatchEvent(new CustomEvent("navigate", { detail: "/" }));
       setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 150); // Aguarda um instante para a home carregar antes de rolar
+      }, 150);
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Se a URL contiver 'resultados', renderiza a galeria
-  if (currentPath.includes("resultados")) {
-    return <ResultsPage goTo={goTo} />;
+  const transitionClass = stage === "out" ? "page-transition-out" : "page-transition-in";
+
+  if (displayPath.includes("resultados")) {
+    return (
+      <div className={transitionClass}>
+        <ResultsPage goTo={goTo} />
+      </div>
+    );
   }
 
-  // Caso contrário, renderiza a Home normal
   return (
-    <div style={{ position: "relative", overflowX: "hidden" }}>
+    <div style={{ position: "relative" }}>
       <Header goTo={goTo} />
       <Hero goTo={goTo} />
-      <Services />
       <About goTo={goTo} />
+      <Services goTo={goTo} />
       <Team />
       <Testimonials />
       <ResultsCTA />
