@@ -42,7 +42,7 @@ export function Location() {
 
             <div className="reveal mt-auto">
               <a 
-                href="https://goo.gl/maps/Z6b7b2kR4E8Bv88M8" // Link exemplo para o Led Office
+                href="https://maps.app.goo.gl/dmXmzkPP1W4Q7FXW9"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 text-[#1E2532] font-medium text-[0.85rem] uppercase tracking-widest hover:opacity-70 transition-opacity"
@@ -57,7 +57,7 @@ export function Location() {
 
           <div className="w-full md:w-7/12 h-[450px] md:h-auto relative bg-[#EAEAEA] overflow-hidden group">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.258752766863!2d-48.026724624119934!3d-15.84300362423719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a32501a3cf9cd%3A0xe54d924151b753a8!2sLed%20Office!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.384638706312!2d-48.04638818514457!3d-15.839379889022635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a333c985beb45%3A0x5aad173a677e222a!2sINB%20ODONTO!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
               width="100%"
               height="100%"
               style={{ border: 0 }}

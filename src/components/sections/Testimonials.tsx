@@ -61,14 +61,14 @@ export function Testimonials() {
         <div className="reveal mt-12 md:mt-20 flex justify-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white border border-[rgba(92,49,54,.08)] rounded-full px-10 py-5 shadow-sm hover:shadow-md transition-shadow duration-300">
             <div className="flex items-center gap-4">
-              <span style={{ ...serif }} className="text-3xl font-medium text-[#000000] leading-none">4.9</span>
+              <span style={{ ...serif }} className="text-3xl font-medium text-[#000000] leading-none">5.0</span>
               <div className="flex gap-1">
                  {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
               </div>
             </div>
             <div className="w-[1px] h-8 bg-[rgba(92,49,54,.1)] hidden sm:block"></div>
             <div className="text-center sm:text-left">
-              <div className="text-[0.85rem] font-semibold text-[#2B1C1D] uppercase tracking-wide">+340 avaliações</div>
+              <div className="text-[0.85rem] font-semibold text-[#2B1C1D] uppercase tracking-wide">99% Satisfação</div>
               <div className="text-[0.75rem] text-[#8A97A5] mt-1">no Google</div>
             </div>
           </div>
