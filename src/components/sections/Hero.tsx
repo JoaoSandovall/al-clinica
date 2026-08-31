@@ -16,16 +16,15 @@ function StatCounter({ target, suffix, label, thousands }: { target: number; suf
     <div ref={ref} className="flex flex-col">
       <div style={{ 
         fontFamily: "'DM Sans', sans-serif", 
-        fontWeight: 300, // Fonte bem mais fina e elegante
-        fontSize: "clamp(2.5rem, 4vw, 3.2rem)", // Tamanho aumentado
-        color: "#2B1C1D", // Tom escuro chumbo
+        fontWeight: 300, 
+        fontSize: "clamp(2.5rem, 4vw, 3.2rem)", 
+        color: "#2B1C1D", 
         lineHeight: 1,
-        letterSpacing: "-0.04em", // Números mais juntinhos
+        letterSpacing: "-0.04em", 
         fontVariantNumeric: "tabular-nums"
       }}>
         {display}
-        {/* Sufixo colorido e levemente menor para dar contraste */}
-        <span style={{ color: "#3075D3", fontWeight: 400, fontSize: "75%", marginLeft: "2px" }}>
+        <span style={{ color: "#D49A89", fontWeight: 400, fontSize: "75%", marginLeft: "2px" }}>
           {suffix}
         </span>
       </div>
@@ -33,8 +32,8 @@ function StatCounter({ target, suffix, label, thousands }: { target: number; suf
         fontSize: ".65rem", 
         color: "#8A97A5", 
         marginTop: 10, 
-        letterSpacing: ".18em",
-        textTransform: "uppercase",
+        letterSpacing: ".18em", 
+        textTransform: "uppercase", 
         fontWeight: 600 
       }}>
         {label}
@@ -48,14 +47,24 @@ function WordReveal({ text, delayStart = 0, italic = false }: { text: string; de
   return (
     <>
       {words.map((word, i) => (
-        <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top" }}>
+        <span 
+          key={i} 
+          style={{ 
+            display: "inline-block", 
+            overflow: "hidden", 
+            verticalAlign: "top",
+            paddingBottom: "0.2em", // Dá espaço para a perna do j, p, g, y, q
+            marginBottom: "-0.2em"  // Puxa a linha de baixo de volta para o lugar
+          }}
+        >
           <span
             className="word-reveal"
             style={{
               display: "inline-block",
               animationDelay: `${delayStart + i * 90}ms`,
               fontStyle: italic ? "italic" : undefined,
-              color: italic ? "#0C238A" : undefined,
+              color: italic ? "#5C3136" : undefined,
+              paddingRight: "0.1em" // Evita que letras em itálico cortem o finalzinho na direita
             }}
           >
             {word}{i < words.length - 1 ? "\u00A0" : ""}
@@ -68,6 +77,12 @@ function WordReveal({ text, delayStart = 0, italic = false }: { text: string; de
 
 export function Hero({ goTo }: { goTo: (id: string) => void }) {
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Gatilho para a animação cinematográfica do fundo
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   useEffect(() => {
     let raf = 0;
@@ -89,51 +104,62 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
     <div style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
       
       <div style={{ position: "absolute", inset: 0 }}>
+        {/* Camada de Parallax no Scroll */}
         <div
           style={{
             position: "absolute",
             top: -80,
-            left: 0,
-            right: 0,
+            left: -80,
+            right: -80,
             bottom: -80,
             transform: `translateY(${scrollY * 0.08}px)`,
             willChange: "transform",
           }}
         >
+          {/* Imagem de Fundo com Zoom Cinematográfico Ultra Lento */}
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1800&h=1000&fit=crop&auto=format"
-            alt="Clínica odontológica moderna"
-            style={{ width: "100%", height: "100%", objectFit: "cover", filter: "brightness(.98) saturate(.82)" }}
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=2000&q=85&fit=crop"
+            alt="Clínica odontológica de alto padrão"
+            className="w-full h-full object-cover origin-center"
+            style={{ 
+              filter: "brightness(.95) saturate(.85)",
+              transform: isLoaded ? "scale(1)" : "scale(1.15)",
+              transition: "transform 10s cubic-bezier(0.25, 1, 0.5, 1)" 
+            }}
           />
         </div>
         <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
       </div>
 
       <div className="w-full max-w-[1280px] mx-auto relative px-6 md:px-10 pt-32 pb-24 md:pt-40 md:pb-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center z-10">
+        
+        {/* Coluna de Texto Principal */}
         <div>
           <div className="anim-fade-down delay-200">
-            <span className="eyebrow" style={{ color: "#3075D3", borderBottomColor: "rgba(48, 117, 211, 0.4)" }}>
-              Sorri+ Odontologia
-            </span>
+            <span className="eyebrow">Odontologia & Estética Avançada</span>
           </div>
+          
           <h1
-            style={{ ...serif, fontWeight: 400, lineHeight: 1.07, letterSpacing: "-.015em", fontSize: "clamp(2.7rem, 6vw, 5.5rem)", color: "#2B1C1D", marginBottom: "1.75rem" }}
+            style={{ ...serif, fontWeight: 400, lineHeight: 1.05, letterSpacing: "-.015em", fontSize: "clamp(2.8rem, 6vw, 5.5rem)", color: "#2B1C1D", marginBottom: "1.75rem" }}
           >
-            <WordReveal text="Mais cuidado." delayStart={280} />{" "}
-            <WordReveal text="Mais sorrisos." delayStart={460} italic />
+            <WordReveal text="A arte de" delayStart={280} />{" "}
+            <WordReveal text="projetar" delayStart={460} italic />{" "}
+            <WordReveal text="sorrisos." delayStart={640} />
           </h1>
-          <p className="anim-fade-up delay-400"
-            style={{ color: "#4A5568", fontSize: "1.1rem", lineHeight: 1.8, maxWidth: 420, marginBottom: "2.5rem", fontWeight: 300 }}>
-            A sua mais nova clínica odontológica no Maiobão. Mais do que um espaço, somos o propósito do amor pela vida por meio da transformação do seu sorriso.
+          
+          {/* Texto Refinado: Foco na arquitetura facial e naturalidade, sem clichês tech */}
+          <p className="anim-fade-up delay-[600ms]"
+            style={{ color: "#4A5568", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 460, marginBottom: "2.5rem", fontWeight: 300 }}>
+            A precisão da ciência aliada à harmonia da sua arquitetura facial. Desenvolvemos planejamentos exclusivos para resultados <strong className="font-medium text-[#5C3136]">milimetricamente naturais</strong>.
           </p>
           
-          <div className="anim-fade-up delay-500 flex flex-col sm:flex-row gap-4 mb-12">
-            <button onClick={() => goTo("contato")} className="btn-primary w-full sm:w-auto">Agendar avaliação gratuita</button>
-            <button onClick={() => goTo("servicos")} className="btn-outline w-full sm:w-auto text-center">Ver tratamentos</button>
+          <div className="anim-fade-up delay-[700ms] flex flex-col sm:flex-row gap-4 mb-14">
+            <button onClick={() => goTo("contato")} className="btn-primary w-full sm:w-auto">Agendar avaliação VIP</button>
+            <button onClick={() => goTo("servicos")} className="btn-outline w-full sm:w-auto text-center">Conheça o portfólio</button>
           </div>
 
-          <div className="anim-fade-up delay-700 flex flex-wrap gap-8 md:gap-10 pt-8 border-t border-[rgba(92,49,54,.14)]">
-            {stats.map((s, index) => (
+          <div className="anim-fade-up delay-[800ms] flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-[rgba(92,49,54,.14)]">
+            {stats.map((s) => (
               <StatCounter 
                 key={s.label} 
                 target={s.target} 
@@ -143,50 +169,39 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
               />
             ))}
           </div>
-
-          <div className="anim-fade-up delay-700 flex flex-wrap gap-8 md:gap-10 pt-8 border-t border-[rgba(12,35,138,.14)]">
-            <div>
-              <div style={{ ...serif, fontWeight: 500, fontSize: "1.8rem", color: "#0C238A", lineHeight: 1 }}>Humanizado</div>
-              <div style={{ fontSize: ".72rem", color: "#8A97A5", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>Atendimento</div>
-            </div>
-            <div>
-              <div style={{ ...serif, fontWeight: 500, fontSize: "1.8rem", color: "#0C238A", lineHeight: 1 }}>Acessível</div>
-              <div style={{ fontSize: ".72rem", color: "#8A97A5", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>Qualidade para todos</div>
-            </div>
-            <div>
-              <div style={{ ...serif, fontWeight: 500, fontSize: "1.8rem", color: "#0C238A", lineHeight: 1 }}>Maiobão</div>
-              <div style={{ fontSize: ".72rem", color: "#8A97A5", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>Localização Premium</div>
-            </div>
-          </div>
-
         </div>
 
-        <div className="hidden md:flex justify-center relative">
-          <div className="relative w-[340px] h-[480px]">
+        {/* Coluna da Imagem (Editorial / Revista) */}
+        <div className="hidden md:flex justify-center lg:justify-end relative">
+          <div className="relative w-[85%] max-w-[380px] aspect-[3/4.2]">
             <img
-              src="https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=640&h=800&fit=crop&auto=format"
-              alt="Paciente com sorriso saudável"
-              className="w-full h-full object-cover rounded-2xl anim-scale-in delay-500"
+              src="https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=800&q=80&fit=crop"
+              alt="Paciente com sorriso sofisticado"
+              className="w-full h-full object-cover rounded-t-full rounded-b-[2rem] anim-scale-in delay-500 shadow-[0_20px_60px_rgba(92,49,54,0.12)]"
               style={{ filter: "brightness(.96) saturate(.9)" }}
             />
-            <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_rgba(92,49,54,.12)]" />
+            {/* Linha de contorno dourada/rosé muito fina simulando uma moldura */}
+            <div className="absolute inset-0 rounded-t-full rounded-b-[2rem] shadow-[inset_0_0_0_1px_rgba(212,154,137,0.3)] pointer-events-none" />
             
-            <div className="stat-float absolute top-12 -left-12 bg-[#FFFFFF]/95 border border-[rgba(92,49,54,.1)] rounded-xl py-3 px-5 shadow-[0_8px_32px_rgba(92,49,54,.12)] backdrop-blur-md">
-               <div style={{ ...serif, fontWeight: 500, fontSize: "1.25rem", color: "#0C238A" }}>4.9 ★</div>
-               <div className="text-[0.7rem] text-[#8A97A5] mt-1">Google Reviews</div>
+            {/* Selo Minimalista em vez de "Cards Flutuantes" de Software */}
+            <div className="absolute top-12 -left-8 anim-fade-in delay-[1200ms]">
+              <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-full shadow-xl border border-white/50 flex items-center gap-4">
+                <div className="w-2 h-2 rounded-full bg-[#D49A89] animate-pulse"></div>
+                <div>
+                  <div className="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-[#A8B2BC] mb-0.5">Certificação</div>
+                  <div style={{ ...serif }} className="text-[#5C3136] text-[1.1rem] leading-none">Invisalign Doctor</div>
+                </div>
+              </div>
             </div>
 
-            <div className="stat-float absolute bottom-16 -right-10 bg-[#FFFFFF]/95 border border-[rgba(92,49,54,.1)] rounded-xl py-3 px-5 shadow-[0_8px_32px_rgba(92,49,54,.12)] backdrop-blur-md">
-               <div style={{ ...serif, fontWeight: 500, fontSize: "1.25rem", color: "#0C238A" }}>1ª</div>
-               <div className="text-[0.7rem] text-[#8A97A5] mt-1">Consulta gratuita</div>
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="anim-fade-in delay-1000 hidden md:flex" style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", flexDirection: "column", alignItems: "center", gap: 6, opacity: .4 }}>
-        <span style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "#4A5568" }}>rolar</span>
-        <div style={{ width: 1, height: 38, background: "linear-gradient(to bottom, #0C238A, transparent)" }} />
+      {/* Rolar Minimalista */}
+      <div className="anim-fade-in delay-1000 hidden md:flex" style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", flexDirection: "column", alignItems: "center", gap: 6, opacity: .6 }}>
+        <span style={{ fontSize: ".55rem", letterSpacing: ".25em", textTransform: "uppercase", color: "#4A5568", fontWeight: 500 }}>Explorar</span>
+        <div style={{ width: 1, height: 45, background: "linear-gradient(to bottom, #5C3136, transparent)" }} />
       </div>
     </div>
   );

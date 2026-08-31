@@ -7,19 +7,17 @@ export function ResultsCTA() {
       <div className="max-w-[1280px] mx-auto">
         <div className="reveal relative rounded-[2.5rem] overflow-hidden bg-[#2B1C1D] flex flex-col md:flex-row items-stretch shadow-2xl">
           
-          {/* Área de Texto Editorial */}
           <div className="p-12 md:p-20 flex flex-col justify-center w-full md:w-[55%] relative z-10">
-            <span className="text-[0.68rem] font-semibold tracking-[0.25em] uppercase text-[#3075D3] mb-6 block">
+            <span className="text-[0.68rem] font-semibold tracking-[0.25em] uppercase text-[#D49A89] mb-6 block">
               Nossos Resultados
             </span>
             
             <h2 style={{ ...serif }} className="text-[2.5rem] md:text-[3.8rem] font-normal leading-[1.1] mb-8 text-[#FDFBF9]">
-              Transformações que <br className="hidden lg:block"/><em className="italic text-[#3075D3]">mudam vidas.</em>
+              Transformações que <br className="hidden lg:block"/><em className="italic text-[#D49A89]">mudam vidas.</em>
             </h2>
             
-            {/* Destaques em branco e rosé */}
             <p className="text-[#FDFBF9]/70 font-light leading-relaxed mb-12 max-w-md text-[1.05rem]">
-              A <strong className="font-medium text-white">excelência do nosso trabalho</strong> é refletida no sorriso de cada paciente. Explore nossa <strong className="font-medium text-white">galeria de casos clínicos</strong> e conheça o padrão Lumina de <strong className="font-medium text-[#3075D3]">odontologia estética e funcional</strong>.
+              A <strong className="font-medium text-white">excelência do nosso trabalho</strong> é refletida no sorriso de cada paciente. Explore nossa <strong className="font-medium text-white">galeria de casos clínicos</strong> e conheça o padrão Lumina de <strong className="font-medium text-[#D49A89]">odontologia estética e funcional</strong>.
             </p>
             
             <div>
@@ -39,7 +37,6 @@ export function ResultsCTA() {
             </div>
           </div>
 
-          {/* Área de Imagem com Mesclagem (Blend) */}
           <div className="w-full md:w-[45%] h-80 md:h-auto relative overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80" 
