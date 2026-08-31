@@ -1,17 +1,25 @@
+import { useState } from "react";
 import { Section } from "../ui/Section";
 import { serif } from "../../data/content";
 
-// Lista de convênios premium (você pode editar os nomes conforme a realidade da clínica)
-const conveniosList = [
-  "Omint", 
-  "Care Plus", 
-  "SulAmérica", 
-  "Bradesco Saúde", 
-  "Porto Seguro", 
-  "Amil One"
+const conveniosData = [
+  {
+    title: "Alinhadores Próprios (In-Office)",
+    content: "Diferente de clínicas tradicionais, possuímos nossa própria produção de alinhadores transparentes. Isso nos permite oferecer mais praticidade, velocidade na entrega e conforto durante todo o seu tratamento ortodôntico."
+  },
+  {
+    title: "Especialista em DTM",
+    content: "Dores de cabeça constantes e estalos na mandíbula não são normais. A Dra. Letícia Ventura é especialista no diagnóstico e tratamento da Disfunção Temporomandibular, devolvendo o conforto para sua fala e mastigação."
+  },
+  {
+    title: "Estrutura Integrada",
+    content: "Da odontopediatria com as crianças até as complexas reabilitações orais, a INB concentra uma equipe de especialistas no mesmo local. Você não será mais um caso, você terá atenção profissional e humana."
+  }
 ];
 
 export function Convenios() {
+  const [activeTab, setActiveTab] = useState<number | null>(0);
+
   const goToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
@@ -19,62 +27,76 @@ export function Convenios() {
 
   return (
     <Section id="convenios">
-      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-20 items-center">
+      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
         
-        {/* Coluna Esquerda: Textos e Assessoria de Reembolso */}
-        <div className="w-full lg:w-5/12 flex flex-col">
+        <div className="w-full lg:w-5/12 lg:sticky lg:top-32">
           <div className="reveal">
-            <span className="eyebrow">Parcerias</span>
+            <span className="eyebrow">A Estrutura INB</span>
           </div>
           
-          <h2 className="reveal mt-3 mb-6" style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.4rem, 4vw, 3.8rem)", color: "#2B1C1D" }}>
-            O seu plano, <br /><em className="italic text-[#D49A89]">padrão Lumina.</em>
+          <h2 className="reveal mt-3 mb-6" style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.4rem, 4vw, 3.8rem)", color: "#1E2532" }}>
+            Cuidado que vai <br />além da <em className="italic text-[#C5A570]">estética.</em>
           </h2>
           
-          <p className="reveal text-[#5A6778] text-[1.05rem] leading-relaxed font-light mb-10">
-            Somos credenciados aos principais planos de saúde do segmento premium, garantindo que o seu tratamento seja realizado com a excelência que você merece, sem atritos.
+          <p className="reveal text-[#7A8593] text-[1.05rem] leading-relaxed font-light mb-10">
+            Acreditamos que a saúde bucal é o reflexo da sua saúde como um todo. Por isso, aliamos tecnologia e atendimento humanizado para resolver qualquer incômodo.
           </p>
 
-          {/* Card de Assessoria de Reembolso */}
-          <div className="reveal bg-[#FDFBF9] border border-[rgba(92,49,54,.1)] rounded-[1.5rem] p-8 md:p-10 shadow-sm relative overflow-hidden group">
-            {/* Detalhe de borda superior */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#5C3136] to-[#D49A89]"></div>
-            
-            <h3 className="text-[0.75rem] font-bold tracking-[0.2em] text-[#5C3136] uppercase mb-4">
-              Assessoria de Reembolso
-            </h3>
-            <p className="text-[#5A6778] font-light text-[0.95rem] leading-relaxed mb-8">
-              Seu plano não está na lista? Nossa equipe cuida de toda a documentação, laudos e notas fiscais para que você solicite o reembolso do seu tratamento junto à sua operadora.
-            </p>
-            
-            <a 
-              href="#contato" 
-              onClick={goToContact}
-              className="inline-flex items-center gap-3 text-[#D49A89] font-medium text-[0.85rem] uppercase tracking-widest group-hover:text-[#5C3136] transition-colors duration-300"
-            >
-              Consultar minha cobertura
-              <svg className="transform group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
+          <div className="reveal">
+            <button onClick={goToContact} className="btn-outline">
+              Quero marcar uma consulta
+            </button>
           </div>
         </div>
 
-        {/* Coluna Direita: Grid de Convênios */}
-        <div className="w-full lg:w-7/12">
-          <div className="stagger-children grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
-            {conveniosList.map((convenio) => (
-              <div 
-                key={convenio} 
-                className="reveal bg-white border border-[rgba(92,49,54,.06)] rounded-2xl h-[120px] flex items-center justify-center p-6 text-center hover:border-[#D49A89] hover:shadow-[0_10px_30px_rgba(92,49,54,0.05)] transition-all duration-500 cursor-default"
+        <div className="w-full lg:w-7/12 stagger-children border-t border-[rgba(30,37,50,.1)]">
+          {conveniosData.map((item, i) => (
+            <div 
+              key={i} 
+              className="reveal"
+              style={{ borderBottom: "1px solid rgba(30,37,50,.1)" }}
+            >
+              <button
+                onClick={() => setActiveTab(activeTab === i ? null : i)}
+                className="w-full flex items-center justify-between py-8 text-left bg-transparent border-none cursor-pointer group"
               >
-                {/* Se você tiver as logos em PNG, pode trocar este <span> pela <img> da logo */}
-                <span className="font-['DM_Sans',sans-serif] text-[1.1rem] font-medium text-[#2B1C1D] opacity-80">
-                  {convenio}
+                <span 
+                  className={`text-[1.1rem] md:text-[1.25rem] transition-colors duration-300 pr-6 ${
+                    activeTab === i ? "text-[#1E2532] font-medium" : "text-[#1E2532] font-normal group-hover:text-[#C5A570]"
+                  }`}
+                  style={serif}
+                >
+                  {item.title}
                 </span>
+                
+                <span className="relative flex items-center justify-center w-6 h-6 shrink-0">
+                  <span 
+                    className="absolute w-full h-[1.5px] bg-[#C5A570] transition-transform duration-300" 
+                    style={{ transform: activeTab === i ? "rotate(180deg)" : "rotate(0deg)" }} 
+                  />
+                  <span 
+                    className="absolute w-full h-[1.5px] bg-[#C5A570] transition-transform duration-300" 
+                    style={{ transform: activeTab === i ? "rotate(0deg)" : "rotate(-90deg)" }} 
+                  />
+                </span>
+              </button>
+              
+              <div 
+                className="grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ gridTemplateRows: activeTab === i ? "1fr" : "0fr" }}
+              >
+                <div className="overflow-hidden">
+                  <p 
+                    className={`pb-8 text-[#7A8593] text-[0.95rem] md:text-[1.05rem] font-light leading-relaxed transition-all duration-500 delay-100 ${
+                      activeTab === i ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+                    }`}
+                  >
+                    {item.content}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
       </div>

@@ -46,10 +46,10 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
         zIndex: 9999,
       }}
       className={`transition-all duration-300 ${
-        menuOpen ? "bg-[#FDFBF9]" : scrolled ? "header-scrolled" : ""
+        menuOpen ? "bg-[#F5F3F0]" : scrolled ? "header-scrolled" : ""
       }`}
     >
-      <div className="px-6 md:px-10 max-w-[1280px] mx-auto flex items-center justify-between h-[4.75rem]">
+      <div className="px-6 md:px-10 max-w-[1280px] mx-auto flex items-center justify-between h-[5rem]">
         
         <div
           className="anim-fade-down flex items-center gap-3 cursor-pointer select-none shrink-0"
@@ -58,22 +58,25 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
             setMenuOpen(false);
           }}
         >
-          <div className="w-8 h-8 rounded-md bg-[#5C3136] flex items-center justify-center shrink-0">
-            <svg viewBox="0 0 24 24" fill="none" width={15} height={15} stroke="#FFFFFF" strokeWidth="1.8">
-              <path d="M12 2C8.5 2 6 5 6 8c0 2.5.8 4.5 2 6l1 7h6l1-7c1.2-1.5 2-3.5 2-6 0-3-2.5-6-6-6z" />
+          {/* Logo Tipográfica INB (Dourado e Azul Marinho) */}
+          <div className="flex items-center justify-center shrink-0 border border-[#C5A570] rounded-full w-11 h-11 bg-white shadow-sm">
+            <svg viewBox="0 0 100 100" width={26} height={26}>
+              <text x="50%" y="65%" textAnchor="middle" fill="#1E2532" fontSize="58" fontFamily="Georgia, serif" letterSpacing="-4">
+                I<tspan fill="#C5A570">N</tspan>B
+              </text>
             </svg>
           </div>
-          <div>
-            <span style={{ ...serif, fontWeight: 400, fontSize: "1.2rem", letterSpacing: ".06em", color: "#5C3136", display: "block", lineHeight: 1 }}>
-              Lumina
+          <div className="flex flex-col justify-center">
+            <span style={{ ...serif, fontWeight: 500, fontSize: "1.3rem", letterSpacing: "0.02em", color: "#1E2532", display: "block", lineHeight: 1 }}>
+              INB Odonto
             </span>
-            <span style={{ fontSize: ".58rem", letterSpacing: ".22em", textTransform: "uppercase", color: "#8A97A5", fontWeight: 300 }}>
-              Odontologia
+            <span style={{ fontSize: ".55rem", letterSpacing: ".15em", textTransform: "uppercase", color: "#7A8593", fontWeight: 400, marginTop: "2px" }}>
+              Odontologia Especializada
             </span>
           </div>
         </div>
 
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9">
           {navLinks.map((label, i) => (
             <button
               key={label}
@@ -92,17 +95,17 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
         </div>
 
         <div className="flex md:hidden relative z-[60] anim-fade-down -mr-2">
-          <Hamburger toggled={menuOpen} toggle={setMenuOpen} color="#5C3136" size={26} rounded label="Mostrar menu" />
+          <Hamburger toggled={menuOpen} toggle={setMenuOpen} color="#1E2532" size={26} rounded label="Mostrar menu" />
         </div>
       </div>
 
       <div
-        className="md:hidden absolute left-0 w-full bg-[#FDFBF9] shadow-2xl overflow-hidden"
+        className="md:hidden absolute left-0 w-full bg-[#F5F3F0] shadow-2xl overflow-hidden"
         style={{ 
-          top: "4.75rem", 
+          top: "5rem", 
           maxHeight: menuOpen ? "500px" : "0", 
           opacity: menuOpen ? 1 : 0,
-          borderBottom: menuOpen ? "1px solid rgba(92,49,54,.05)" : "none",
+          borderBottom: menuOpen ? "1px solid rgba(30,37,50,.05)" : "none",
           transition: "max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease" 
         }}
       >
@@ -113,7 +116,7 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
               onClick={() => handleNav(navIds[i])}
               style={{ 
                 textAlign: "left", 
-                color: "#5C3136", 
+                color: "#1E2532", 
                 fontWeight: 500, 
                 fontSize: "1.1rem", 
                 background: "none", 

@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
-import { Shield, Sparkles, Layers, ScanFace, Activity, Smile } from "lucide-react";
+import { Smile, Sparkles, Activity, Shield, Users, Stethoscope } from "lucide-react";
+
 import lentesAntes from "../imagens/lentes-antes.jpg";
 import lentesDepois from "../imagens/lentes-depois.jpg";
 import clareamentoAntes from "../imagens/clareamento-antes.jpg";
@@ -13,101 +14,103 @@ export const serif: CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia
 
 export const services = [
   {
-    icon: <Shield size={28} strokeWidth={1.2} />,
-    title: "Implante Dentário",
-    desc: "Substituição permanente de dentes perdidos com titânio de alta pureza e coroas que imitam perfeitamente o dente natural."
-  },
-  {
     icon: <Sparkles size={28} strokeWidth={1.2} />,
-    title: "Clareamento Dental",
-    desc: "Protocolo clínico de clareamento profissional com luz LED de última geração, resultado visível em uma única sessão."
-  },
-  {
-    icon: <Layers size={28} strokeWidth={1.2} />,
-    title: "Facetas de Porcelana",
-    desc: "Laminados ultra-finos que transformam a estética do sorriso com precisão milimétrica e durabilidade de décadas."
-  },
-  {
-    icon: <ScanFace size={28} strokeWidth={1.2} />,
-    title: "Ortodontia / Alinhadores",
-    desc: "Alinhamento com aparelhos tradicionais ou alinhadores transparentes personalizados para cada fase do tratamento."
-  },
-  {
-    icon: <Activity size={28} strokeWidth={1.2} />,
-    title: "Tratamento de Canal",
-    desc: "Endodontia com rotação mecanizada e localizador apical digital — procedimento rápido e praticamente sem dor."
+    title: "Dentística & Reabilitação",
+    desc: "Transformação de sorrisos com dedicação. Avaliamos cada caso como um universo de possibilidades, planejando a reabilitação estética ideal para você."
   },
   {
     icon: <Smile size={28} strokeWidth={1.2} />,
+    title: "Ortodontia & Alinhadores",
+    desc: "Produção in-office de alinhadores transparentes e aparelhos convencionais, oferecendo conforto, praticidade e resultados estéticos de excelência."
+  },
+  {
+    icon: <Shield size={28} strokeWidth={1.2} />,
+    title: "Estomatologia",
+    desc: "Prevenção, diagnóstico e tratamento de lesões dentro e fora da cavidade bucal, devolvendo conforto e garantindo a sua saúde integral."
+  },
+  {
+    icon: <Activity size={28} strokeWidth={1.2} />,
+    title: "DTM & Dor Orofacial",
+    desc: "Diagnóstico e alívio para dores na mandíbula, estalos, dificuldades de mastigação e dores de cabeça relacionadas à Articulação Temporomandibular."
+  },
+  {
+    icon: <Users size={28} strokeWidth={1.2} />,
     title: "Odontopediatria",
-    desc: "Ambiente acolhedor e técnicas gentis para que crianças tenham uma relação saudável com a saúde bucal desde cedo."
+    desc: "Uma abordagem lúdica e sensível para encantar os pequenos, focando na prevenção e saúde bucal desde a infância para um futuro sem intervenções."
+  },
+  {
+    icon: <Stethoscope size={28} strokeWidth={1.2} />,
+    title: "Clínica Geral",
+    desc: "Diagnósticos precisos, limpezas periódicas e procedimentos de rotina para manter a integridade do seu sorriso sempre em dia."
   }
 ];
 
 export const testimonials = [
   {
-    name: "Fernanda Carvalho", role: "Empreendedora", stars: 5,
-    text: "Fiz facetas de porcelana e o resultado me surpreendeu completamente. A equipe me explicou cada etapa com paciência e o sorriso ficou absolutamente natural.",
+    name: "Carolina Mendes", role: "Paciente", stars: 5,
+    text: "O atendimento da INB é surreal. A Dra. Lara não olhou só pros meus dentes, ela entendeu exatamente o que eu queria pro meu sorriso. Recomendo muito!",
     img: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=80&h=80&fit=crop&auto=format",
   },
   {
-    name: "Rodrigo Mendes", role: "Engenheiro Civil", stars: 5,
-    text: "Tinha muito medo de dentista e fui indicado por um amigo. A clínica tem um ambiente diferente — moderno, tranquilo. Fiz o implante sem sentir nada.",
+    name: "Marcos Oliveira", role: "Paciente", stars: 5,
+    text: "Sofria com dores de cabeça e estalos na mandíbula há anos. O tratamento de DTM com a Dra. Letícia devolveu minha qualidade de vida.",
     img: "https://images.unsplash.com/photo-1667133295308-9ef24f71952e?w=80&h=80&fit=crop&auto=format",
   },
   {
-    name: "Juliana Torres", role: "Professora universitária", stars: 5,
-    text: "Três anos em tratamento ortodôntico e cada consulta foi impecável. Atendimento pontual, explicações claras e resultado além do que eu esperava.",
+    name: "Patrícia Souza", role: "Mãe de Paciente", stars: 5,
+    text: "A Dra. Clara é um anjo! Meu filho tinha muito medo de dentista e hoje ele adora as consultas. O trabalho de conscientização com a família faz toda a diferença.",
     img: "https://images.unsplash.com/photo-1562337404-3044c84ac061?w=80&h=80&fit=crop&auto=format",
   }
 ];
 
 export const team = [
-  { name: "Dr. Rafael Almeida", cro: "CRO 58.203", specialty: "Implantodontia & Cirurgia", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
-  { name: "Dra. Camila Nunes",  cro: "CRO 62.417", specialty: "Estética & Facetas",        img: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=400&h=500&fit=crop&auto=format" },
-  { name: "Dr. Bruno Lacerda",  cro: "CRO 49.880", specialty: "Ortodontia",                 img: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?w=400&h=500&fit=crop&auto=format" }
+  { name: "Dra. Thais",           cro: "Estomatologia",             specialty: "Diagnóstico de Lesões", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
+  { name: "Dra. Lara",            cro: "Dentística",                specialty: "Reabilitação Oral",     img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&auto=format" },
+  { name: "Dra. Rafaella Gadelha",cro: "Ortodontia",                specialty: "Alinhadores In-Office", img: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=400&h=500&fit=crop&auto=format" },
+  { name: "Dra. Clara",           cro: "Odontopediatria",           specialty: "Odontologia Hospitalar",img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=500&fit=crop&auto=format" },
+  { name: "Dra. Letícia Ventura", cro: "DTM & Dor Orofacial",       specialty: "Alívio de Dores",       img: "https://images.unsplash.com/photo-1594824432258-f9b1a50c3d9a?w=400&h=500&fit=crop&auto=format" }
 ];
 
 export const faqs = [
-  { q: "O clareamento dental danifica o esmalte?", a: "Não. Nosso protocolo usa concentração de peróxido calibrada e dessensibilizante antes e após o procedimento, preservando integralmente a estrutura do dente." },
-  { q: "Quanto tempo dura um implante dentário?", a: "Com higiene adequada e acompanhamento semestral, implantes de titânio têm vida útil superior a 25 anos. A maioria dos pacientes mantém o implante por toda a vida." },
-  { q: "Alinhadores invisíveis funcionam para casos complexos?", a: "Para a maioria dos casos de má oclusão, sim. Casos muito severos podem exigir aparelho fixo. Fazemos um planejamento digital completo antes de iniciar qualquer tratamento." },
-  { q: "Vocês atendem convênios?", a: "Trabalhamos com os principais convênios e também oferecemos parcelamento próprio em até 12x sem juros para tratamentos fora do plano." }
+  { q: "Onde a INB Odonto está localizada?", a: "Estamos no coração de Águas Claras: Intercity Led Office, Torre 2, Sala 210. Um ambiente moderno e de fácil acesso para o seu conforto." },
+  { q: "Quais os sintomas da DTM?", a: "Os sintomas podem incluir dor na mandíbula, dificuldade para abrir ou fechar a boca, estalos na articulação, dores de cabeça e até dor no pescoço. Nossa especialista Dra. Letícia pode ajudar." },
+  { q: "Vocês produzem os próprios alinhadores transparentes?", a: "Sim! Na INB contamos com produção de alinhadores in-office. Isso oferece mais agilidade, precisão, conforto e praticidade durante todo o seu tratamento ortodôntico." },
+  { q: "Qual a idade certa para a primeira consulta das crianças?", a: "A Dra. Clara orienta que a prevenção deve iniciar a partir dos 2 meses de idade, mesmo antes da erupção dos dentes, para orientações de hábitos alimentares e higiene." }
 ];
 
-export const navLinks = ["Serviços", "Sobre", "Equipe", "Resultados", "Convênios", "Contato"];
-export const navIds   = ["servicos", "sobre",  "equipe", "/resultados", "convenios", "contato"];
+export const navLinks = ["A Clínica", "Tratamentos", "Especialistas", "Resultados", "Estrutura", "Contato"];
+export const navIds   = ["sobre", "servicos", "equipe", "/resultados", "convenios", "contato"];
 
 export const clinicalCases = [
   {
-    category: "Lentes de Contato Dental",
-    duration: "Planejamento + 2 Sessões",
-    complaint: "Dentes amarelados, curtos, com desgaste nas bordas incisais e sorriso tímido.",
-    procedure: "Aplicação de 10 facetas de porcelana ultra-finas (cor BL2). Devolvemos proporção, tamanho e brilho natural à arcada superior.",
+    category: "Reabilitação Estética",
+    duration: "Planejamento Personalizado",
+    complaint: "Dentes amarelados e desgastados, comprometendo a harmonia do rosto.",
+    procedure: "Transformação do sorriso com facetas de porcelana guiada pela arquitetura facial da paciente.",
     beforeImg: lentesAntes,
     afterImg: lentesDepois
   },
   {
-    category: "Clareamento a Laser",
-    duration: "Sessão Única (45 min)",
-    complaint: "Escurecimento severo do esmalte devido ao consumo contínuo de café e tabagismo ao longo dos anos.",
-    procedure: "Protocolo de clareamento de consultório com Peróxido de Hidrogênio 35% ativado por luz LED em 3 ciclos de 15 minutos.",
-    beforeImg: clareamentoAntes,
-    afterImg: clareamentoDepois
-  },
-  {
-    category: "Ortodontia com Alinhadores",
-    duration: "8 Meses de Tratamento",
-    complaint: "Apinhamento (dentes encavalados) na região anterior inferior e sorriso metálico com aparelho antigo.",
-    procedure: "Remoção do aparelho fixo e escaneamento digital em 3D. Tratamento finalizado exclusivamente com alinhadores invisíveis.",
+    category: "Alinhadores In-Office",
+    duration: "Acompanhamento Contínuo",
+    complaint: "Dentes apinhados e rejeição ao uso de aparelhos metálicos tradicionais.",
+    procedure: "Tratamento ortodôntico 100% invisível utilizando nossa produção própria de alinhadores INB.",
     beforeImg: alinhamentoAntes,
     afterImg: alinhamentoDepois
   },
   {
-    category: "Reabilitação Estética",
-    duration: "3 Sessões",
-    complaint: "Sorriso excessivamente gengival e presença de resinas antigas, opacas e manchadas nos dentes da frente.",
-    procedure: "Gengivoplastia para aumento de coroa clínica (remoção do excesso de gengiva) e substituição por resinas compostas de alta estética.",
+    category: "Clareamento Clínico",
+    duration: "Sessão Rápida",
+    complaint: "Esmalte escurecido e com manchas superficiais ao longo dos anos.",
+    procedure: "Protocolo de clareamento supervisionado para devolver o brilho natural com segurança.",
+    beforeImg: clareamentoAntes,
+    afterImg: clareamentoDepois
+  },
+  {
+    category: "Reabilitação Oral",
+    duration: "Tratamento Integrado",
+    complaint: "Sorriso gengival e resinas antigas escurecidas.",
+    procedure: "Substituição de materiais antigos e plastia gengival para um resultado altamente natural e saudável.",
     beforeImg: gengivoAntes,
     afterImg: gengivoDepois
   }
