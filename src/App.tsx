@@ -81,7 +81,7 @@ export default function App() {
       <ResultsCTA />
       <FAQ />
       <Contact />
-      <Footer />
+
     </div>
   );
 }

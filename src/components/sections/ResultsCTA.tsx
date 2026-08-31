@@ -9,16 +9,17 @@ export function ResultsCTA() {
           
           {/* Área de Texto Editorial */}
           <div className="p-12 md:p-20 flex flex-col justify-center w-full md:w-[55%] relative z-10">
-            <span className="text-[0.68rem] font-semibold tracking-[0.25em] uppercase text-[#D49A89] mb-6 block">
+            <span className="text-[0.68rem] font-semibold tracking-[0.25em] uppercase text-[#3075D3] mb-6 block">
               Nossos Resultados
             </span>
             
             <h2 style={{ ...serif }} className="text-[2.5rem] md:text-[3.8rem] font-normal leading-[1.1] mb-8 text-[#FDFBF9]">
-              Transformações que <br className="hidden lg:block"/><em className="italic text-[#D49A89]">mudam vidas.</em>
+              Transformações que <br className="hidden lg:block"/><em className="italic text-[#3075D3]">mudam vidas.</em>
             </h2>
             
+            {/* Destaques em branco e rosé */}
             <p className="text-[#FDFBF9]/70 font-light leading-relaxed mb-12 max-w-md text-[1.05rem]">
-              A excelência do nosso trabalho é refletida no sorriso de cada paciente. Explore nossa galeria de casos clínicos e conheça o padrão Lumina de odontologia estética e funcional.
+              A <strong className="font-medium text-white">excelência do nosso trabalho</strong> é refletida no sorriso de cada paciente. Explore nossa <strong className="font-medium text-white">galeria de casos clínicos</strong> e conheça o padrão Lumina de <strong className="font-medium text-[#3075D3]">odontologia estética e funcional</strong>.
             </p>
             
             <div>
@@ -46,7 +47,6 @@ export function ResultsCTA() {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
               style={{ filter: "brightness(0.9)" }}
             />
-            {/* Gradiente que funde a foto suavemente com o fundo escuro da esquerda */}
             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#2B1C1D] via-[#2B1C1D]/40 to-transparent opacity-90 md:opacity-100 pointer-events-none" />
           </div>
 

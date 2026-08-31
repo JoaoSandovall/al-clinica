@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useCountUp(target: number, duration = 2500, startDelay = 750) {
+export function useCountUp(target: number, duration = 3000, startDelay = 750) {
   const [value, setValue] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
@@ -14,7 +14,6 @@ export function useCountUp(target: number, duration = 2500, startDelay = 750) {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
           
-          // Segura a contagem para esperar o delay-800 e o fade-up do CSS terminarem
           setTimeout(() => {
             let start: number;
 
@@ -22,10 +21,11 @@ export function useCountUp(target: number, duration = 2500, startDelay = 750) {
               if (start === undefined) start = now;
               const progress = Math.min((now - start) / duration, 1);
               
-              // Curva easeOutQuart: Começa rápido saindo do zero e freia suavemente no fim
-              const eased = 1 - Math.pow(1 - progress, 4);
+              // Curva easeOutExpo: Arranca rápido, mas freia de forma extremamente longa e suave
+              const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
               
-              setValue(Math.floor(eased * target));
+              // Trocado Math.floor por Math.round para evitar saltos no último frame
+              setValue(Math.round(eased * target));
               
               if (progress < 1) {
                 requestAnimationFrame(step);
@@ -35,7 +35,7 @@ export function useCountUp(target: number, duration = 2500, startDelay = 750) {
             };
 
             requestAnimationFrame(step);
-          }, startDelay); // <-- Espera 1.2 segundos antes de contar
+          }, startDelay);
 
           obs.disconnect();
         }

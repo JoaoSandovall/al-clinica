@@ -19,7 +19,7 @@ function BeforeAfterSlider({ beforeImg, afterImg }: { beforeImg: string, afterIm
 
       <div className="absolute top-0 bottom-0 w-[1.5px] bg-white/80 pointer-events-none shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-transform duration-75" style={{ left: `calc(${sliderPosition}% - 0.75px)` }}>
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 ${isHovered ? 'bg-white/90 scale-110 shadow-xl' : 'bg-white/50 backdrop-blur-sm shadow-md border border-white/40'}`}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C3136" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C238A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 18l-6-6 6-6" />
             <path d="M15 18l6-6-6-6" />
           </svg>
@@ -31,7 +31,7 @@ function BeforeAfterSlider({ beforeImg, afterImg }: { beforeImg: string, afterIm
       <div className="absolute bottom-5 left-5 bg-black/40 backdrop-blur-md border border-white/20 text-[#FFFFFF] text-[0.6rem] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full pointer-events-none">
         Antes
       </div>
-      <div className="absolute bottom-5 right-5 bg-[#5C3136]/70 backdrop-blur-md border border-white/20 text-[#FFFFFF] text-[0.6rem] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full pointer-events-none">
+      <div className="absolute bottom-5 right-5 bg-[#0C238A]/70 backdrop-blur-md border border-white/20 text-[#FFFFFF] text-[0.6rem] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full pointer-events-none">
         Depois
       </div>
     </div>
@@ -47,26 +47,27 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
         
         {/* COLOR BLOCK - Bloco Sólido Vinho no Topo */}
         <div className="max-w-[1360px] mx-auto px-4 md:px-8 w-full pt-[6rem]">
-          <div className="bg-[#5C3136] w-full rounded-[2rem] md:rounded-[3rem] pt-16 pb-32 md:pt-24 md:pb-44 px-6 md:px-10 text-center shadow-2xl relative z-10 flex flex-col items-center">
+          <div className="bg-[#0C238A] w-full rounded-[2rem] md:rounded-[3rem] pt-16 pb-32 md:pt-24 md:pb-44 px-6 md:px-10 text-center shadow-2xl relative z-10 flex flex-col items-center">
             
             <div className="anim-fade-up">
-              <span className="inline-block font-['DM_Sans',sans-serif] text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#D49A89] pb-1 border-b border-[#D49A89]/40 mb-6">
+              <span className="inline-block font-['DM_Sans',sans-serif] text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-[#3075D3] pb-1 border-b border-[#3075D3]/40 mb-6">
                 Portfólio Clínico
               </span>
               
               <h1 style={{ ...serif }} className="text-4xl md:text-5xl lg:text-7xl text-[#FFFFFF] font-normal tracking-tight leading-tight max-w-4xl mx-auto">
-                A beleza do <em className="italic text-[#FFEE05]">recomeço.</em>
+                A beleza do <em className="italic text-[#3075D3]">recomeço.</em>
               </h1>
               
+              {/* Palavras-chave destacadas em Branco e Rosé para brilhar no fundo escuro */}
               <p className="text-[#FFFFFF]/80 max-w-2xl mx-auto mt-6 font-light text-[1.05rem] leading-relaxed">
-                Navegue pela nossa galeria de casos reais. O planejamento digital aliado à excelência clínica nos permite entregar resultados milimetricamente naturais.
+                Navegue pela nossa <strong className="font-medium text-white">galeria de casos reais</strong>. O <strong className="font-medium text-white">planejamento digital</strong> aliado à <strong className="font-medium text-white">excelência clínica</strong> nos permite entregar resultados <strong className="font-medium text-[#3075D3]">milimetricamente naturais</strong>.
               </p>
             </div>
 
           </div>
         </div>
 
-        {/* ÁREA CLARA - Grid de Casos (Sobrepondo o Bloco Vinho para efeito 3D) */}
+        {/* ÁREA CLARA - Grid de Casos */}
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 -mt-20 md:-mt-28 relative z-20 pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             
@@ -76,17 +77,15 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
                 className="flex flex-col anim-fade-up bg-white rounded-[2rem] p-3 shadow-[0_15px_50px_rgba(92,49,54,0.08)] border border-[rgba(92,49,54,.04)]" 
                 style={{ animationDelay: `${(index % 2) * 200 + 100}ms` }}
               >
-                {/* Imagens Antes/Depois */}
                 <BeforeAfterSlider beforeImg={item.beforeImg} afterImg={item.afterImg} />
                 
-                {/* Corpo do Cartão Clínico */}
                 <div className="pt-8 px-5 pb-5 flex flex-col flex-grow">
                   
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                     <h3 style={{ ...serif }} className="text-2xl md:text-[1.75rem] text-[#2B1C1D]">
                       {item.category}
                     </h3>
-                    <span className="text-[#5C3136] text-[0.65rem] uppercase tracking-[0.15em] border border-[rgba(92,49,54,.15)] px-4 py-2 rounded-full font-medium w-max">
+                    <span className="text-[#0C238A] text-[0.65rem] uppercase tracking-[0.15em] border border-[rgba(92,49,54,.15)] px-4 py-2 rounded-full font-medium w-max">
                       {item.duration}
                     </span>
                   </div>
@@ -101,7 +100,7 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-[0.65rem] uppercase tracking-[0.2em] text-[#D49A89] font-semibold mb-3">
+                      <h4 className="text-[0.65rem] uppercase tracking-[0.2em] text-[#3075D3] font-semibold mb-3">
                         A Solução
                       </h4>
                       <p className="text-[#4A5568] font-light text-[0.95rem] leading-relaxed">
@@ -113,7 +112,7 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
                   <div className="mt-auto pt-6 border-t border-[rgba(92,49,54,.08)]">
                     <button 
                       onClick={() => goTo("contato")} 
-                      className="group flex items-center justify-between w-full text-left text-[#2B1C1D] hover:text-[#5C3136] transition-colors duration-500 py-2"
+                      className="group flex items-center justify-between w-full text-left text-[#2B1C1D] hover:text-[#0C238A] transition-colors duration-500 py-2"
                     >
                       <span className="text-[0.72rem] font-medium uppercase tracking-[0.18em]">
                         Agendar caso semelhante
@@ -134,12 +133,12 @@ export function ResultsPage({ goTo }: { goTo: (id: string) => void }) {
             <a 
               href="/" 
               onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent("navigate", { detail: "/" })); }} 
-              className="group inline-flex items-center gap-3 text-[#5A6778] hover:text-[#5C3136] font-medium transition-colors"
+              className="group inline-flex items-center gap-3 text-[#5A6778] hover:text-[#0C238A] font-medium transition-colors"
             >
               <svg className="w-4 h-4 transform group-hover:-translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              <span className="border-b border-transparent group-hover:border-[#5C3136] pb-0.5 transition-colors duration-300">
+              <span className="border-b border-transparent group-hover:border-[#0C238A] pb-0.5 transition-colors duration-300">
                 Retornar à página inicial
               </span>
             </a>

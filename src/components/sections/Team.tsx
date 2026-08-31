@@ -32,13 +32,13 @@ export function Team() {
                 
                 {/* Badge do CRO (Glassmorphism) */}
                 <div className="absolute bottom-5 left-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-lg">
-                  <span className="text-[0.65rem] font-bold tracking-[0.2em] text-[#5C3136] uppercase">{dr.cro}</span>
+                  <span className="text-[0.65rem] font-bold tracking-[0.2em] text-[#0C238A] uppercase">{dr.cro}</span>
                 </div>
               </div>
 
               {/* Informações com Guia Lateral */}
-              <div className="pl-4 border-l border-[#D49A89]/40 group-hover:border-[#5C3136] transition-colors duration-500">
-                <div style={{ ...serif }} className="text-2xl text-[#2B1C1D] group-hover:text-[#5C3136] transition-colors duration-500">
+              <div className="pl-4 border-l border-[#3075D3]/40 group-hover:border-[#0C238A] transition-colors duration-500">
+                <div style={{ ...serif }} className="text-2xl text-[#2B1C1D] group-hover:text-[#0C238A] transition-colors duration-500">
                   {dr.name}
                 </div>
                 <div className="text-[0.75rem] font-medium tracking-widest uppercase text-[#8A97A5] mt-2">

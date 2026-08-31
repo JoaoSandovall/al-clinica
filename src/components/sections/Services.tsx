@@ -15,10 +15,12 @@ export function Services({ goTo }: { goTo: (id: string) => void }) {
             className="reveal mt-3"
             style={{ ...serif, fontWeight: 400, lineHeight: 1.05, fontSize: "clamp(2.4rem, 4vw, 3.8rem)", color: "#2B1C1D" }}
           >
-            A arte e a ciência por trás de um <em style={{ color: "#5C3136", fontStyle: "italic" }}>sorriso perfeito.</em>
+            A arte e a ciência por trás de um <em style={{ color: "#0C238A", fontStyle: "italic" }}>sorriso perfeito.</em>
           </h2>
+          
+          {/* Palavras-chave destacadas com strong e cor da marca */}
           <p className="reveal mt-6" style={{ color: "#5A6778", fontSize: "1.05rem", lineHeight: 1.8, fontWeight: 300 }}>
-            Nossa clínica oferece uma abordagem integrada, combinando tecnologia de ponta com a precisão artesanal que cada tratamento exige. Da avaliação inicial ao acompanhamento contínuo.
+            Nossa clínica oferece uma <strong className="font-medium text-[#0C238A]">abordagem integrada</strong>, combinando <strong className="font-medium text-[#0C238A]">tecnologia de ponta</strong> com a precisão artesanal que cada tratamento exige. Da avaliação inicial ao acompanhamento contínuo.
           </p>
           
           {/* ÚNICO BOTÃO DE AGENDAMENTO (Desktop) */}
@@ -40,17 +42,17 @@ export function Services({ goTo }: { goTo: (id: string) => void }) {
                 
                 {/* Número e Ícone Minimalistas */}
                 <div className="flex md:flex-col items-center md:items-start gap-5 md:w-[60px] shrink-0">
-                  <span className="text-[0.7rem] font-medium tracking-[0.2em] text-[#A8B2BC] group-hover:text-[#D49A89] transition-colors duration-500">
+                  <span className="text-[0.7rem] font-medium tracking-[0.2em] text-[#A8B2BC] group-hover:text-[#3075D3] transition-colors duration-500">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <div className="text-[#5C3136] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 md:origin-left">
+                  <div className="text-[#0C238A] opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 md:origin-left">
                     {s.icon}
                   </div>
                 </div>
 
                 {/* Texto e Conteúdo do Serviço */}
                 <div className="flex-1">
-                  <h3 style={{ ...serif }} className="text-2xl md:text-[1.8rem] text-[#2B1C1D] mb-4 group-hover:text-[#5C3136] transition-colors duration-500">
+                  <h3 style={{ ...serif }} className="text-2xl md:text-[1.8rem] text-[#2B1C1D] mb-4 group-hover:text-[#0C238A] transition-colors duration-500">
                     {s.title}
                   </h3>
                   <p className="text-[#5A6778] text-[0.95rem] md:text-[1.05rem] font-light leading-relaxed">

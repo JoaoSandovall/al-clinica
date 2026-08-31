@@ -8,12 +8,12 @@ export function Footer() {
           
           <div className="md:col-span-2">
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: "1.25rem" }}>
-              <div style={{ width: 28, height: 28, borderRadius: 5, background: "#5C3136", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div style={{ width: 28, height: 28, borderRadius: 5, background: "#0C238A", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <svg viewBox="0 0 24 24" fill="none" width={13} height={13} stroke="#FFFFFF" strokeWidth="1.8">
                   <path d="M12 2C8.5 2 6 5 6 8c0 2.5.8 4.5 2 6l1 7h6l1-7c1.2-1.5 2-3.5 2-6 0-3-2.5-6-6-6z" />
                 </svg>
               </div>
-              <span style={{ ...serif, fontWeight: 400, fontSize: "1.1rem", letterSpacing: ".06em", color: "#5C3136" }}>Lumina Odontologia</span>
+              <span style={{ ...serif, fontWeight: 400, fontSize: "1.1rem", letterSpacing: ".06em", color: "#0C238A" }}>Lumina Odontologia</span>
             </div>
             <p style={{ color: "#8A97A5", fontSize: ".875rem", lineHeight: 1.8, maxWidth: 260, fontWeight: 300 }}>
               Cuidado especializado para sorrisos que transformam vidas. São Paulo, desde 2006.
@@ -23,7 +23,7 @@ export function Footer() {
                 <div
                   key={s}
                   style={{ width: 32, height: 32, borderRadius: 6, border: "1px solid rgba(92,49,54,.15)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", fontSize: ".72rem", color: "#8A97A5", transition: "border-color .22s, color .22s" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#5C3136"; e.currentTarget.style.color = "#5C3136"; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#0C238A"; e.currentTarget.style.color = "#0C238A"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(92,49,54,.15)"; e.currentTarget.style.color = "#8A97A5"; }}
                 >
                   {s}
@@ -37,7 +37,7 @@ export function Footer() {
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {services.map((s) => (
                 <li key={s.title} style={{ color: "#8A97A5", fontSize: ".875rem", cursor: "pointer", fontWeight: 300, transition: "color .22s" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#5C3136")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#0C238A")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#8A97A5")}
                 >
                   {s.title}
@@ -51,8 +51,8 @@ export function Footer() {
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.75rem", color: "#8A97A5", fontSize: ".875rem", fontWeight: 300 }}>
               <li>Av. Paulista, 2.001 — Bela Vista</li>
               <li>São Paulo — SP, 01310-100</li>
-              <li style={{ cursor: "pointer", transition: "color .22s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#5C3136")} onMouseLeave={(e) => (e.currentTarget.style.color = "#8A97A5")} >(11) 3240-9900</li>
-              <li style={{ cursor: "pointer", transition: "color .22s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#5C3136")} onMouseLeave={(e) => (e.currentTarget.style.color = "#8A97A5")} >contato@luminaodonto.com.br</li>
+              <li style={{ cursor: "pointer", transition: "color .22s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#0C238A")} onMouseLeave={(e) => (e.currentTarget.style.color = "#8A97A5")} >(11) 3240-9900</li>
+              <li style={{ cursor: "pointer", transition: "color .22s" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#0C238A")} onMouseLeave={(e) => (e.currentTarget.style.color = "#8A97A5")} >contato@luminaodonto.com.br</li>
             </ul>
           </div>
 

@@ -38,7 +38,7 @@ export function FAQ() {
                 <span style={{ 
                   fontSize: "1.05rem", 
                   fontWeight: activeFaq === i ? 600 : 500, 
-                  color: activeFaq === i ? "#5C3136" : "#2B1C1D", 
+                  color: activeFaq === i ? "#0C238A" : "#2B1C1D", 
                   paddingRight: "1.5rem",
                   transition: "color 0.3s ease"
                 }}>
@@ -48,7 +48,7 @@ export function FAQ() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "#5C3136", 
+                  color: "#0C238A", 
                   opacity: activeFaq === i ? 1 : 0.5, 
                   flexShrink: 0, 
                   transition: "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease", 

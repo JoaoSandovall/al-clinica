@@ -2,7 +2,7 @@ import { Section } from "../ui/Section";
 import { serif, testimonials } from "../../data/content";
 
 const StarIcon = () => (
-  <svg className="w-[1.1rem] h-[1.1rem] text-[#D49A89]" fill="currentColor" viewBox="0 0 20 20">
+  <svg className="w-[1.1rem] h-[1.1rem] text-[#3075D3]" fill="currentColor" viewBox="0 0 20 20">
     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
   </svg>
 );
@@ -31,7 +31,7 @@ export function Testimonials() {
               className="reveal relative bg-white border border-[rgba(92,49,54,.06)] p-8 md:p-10 flex flex-col justify-between h-auto md:h-full hover:shadow-[0_15px_40px_rgba(92,49,54,0.05)] transition-shadow duration-500 rounded-2xl overflow-hidden shrink-0 w-[85vw] sm:w-[380px] md:w-auto snap-center"
             >
               {/* Marca d'água elegante de aspas */}
-              <span className="absolute top-6 right-8 text-[6rem] text-[#5C3136] opacity-[0.03] font-serif leading-none select-none">
+              <span className="absolute top-6 right-8 text-[6rem] text-[#0C238A] opacity-[0.03] font-serif leading-none select-none">
                 "
               </span>
               
@@ -61,7 +61,7 @@ export function Testimonials() {
         <div className="reveal mt-12 md:mt-20 flex justify-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white border border-[rgba(92,49,54,.08)] rounded-full px-10 py-5 shadow-sm hover:shadow-md transition-shadow duration-300">
             <div className="flex items-center gap-4">
-              <span style={{ ...serif }} className="text-3xl font-medium text-[#5C3136] leading-none">4.9</span>
+              <span style={{ ...serif }} className="text-3xl font-medium text-[#0C238A] leading-none">4.9</span>
               <div className="flex gap-1">
                  {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
               </div>
