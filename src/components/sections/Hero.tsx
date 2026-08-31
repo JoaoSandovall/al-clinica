@@ -1,72 +1,42 @@
 import { useEffect, useState } from "react";
-import { serif } from "../../data/content";
+import { serif, globalData } from "../../data/content";
 import { useCountUp } from "../../hooks/useCountUp";
+import { Star, Shield, Smile } from "lucide-react";
 
-const stats = [
-  { target: 5, suffix: "+", label: "especialidades clínicas" },
-  { target: 100, suffix: "%", label: "alinhadores in-office", thousands: false },
-  { target: 99, suffix: "%", label: "satisfação" },
-];
-
-function StatCounter({ target, suffix, label, thousands }: { target: number; suffix: string; label: string; thousands?: boolean }) {
+// Componente do Cartão Flutuante (Estilo Glassmorphism como na foto)
+function FloatingStatCard({ target, suffix, label, icon: Icon, delay, className, thousands }: any) {
   const { value, ref } = useCountUp(target);
   const display = thousands ? value.toLocaleString("pt-BR") : value;
 
   return (
-    <div ref={ref} className="flex flex-col">
-      <div style={{ 
-        fontFamily: "'DM Sans', sans-serif", 
-        fontWeight: 300, 
-        fontSize: "clamp(2.5rem, 4vw, 3.2rem)", 
-        color: "#1E2532", 
-        lineHeight: 1,
-        letterSpacing: "-0.04em", 
-        fontVariantNumeric: "tabular-nums"
-      }}>
-        {display}
-        <span style={{ color: "#C5A570", fontWeight: 400, fontSize: "75%", marginLeft: "2px" }}>
-          {suffix}
-        </span>
+    <div 
+      ref={ref} 
+      className={`absolute z-30 bg-white/90 backdrop-blur-xl border border-white p-4 rounded-2xl shadow-[0_15px_35px_rgba(30,37,50,0.1)] flex items-center gap-4 anim-fade-in ${className}`} 
+      style={{ animationDelay: delay }}
+    >
+      <div className="w-12 h-12 rounded-xl bg-[var(--c-primary)] text-white flex items-center justify-center shrink-0 shadow-inner">
+        <Icon size={22} strokeWidth={2} />
       </div>
-      <div style={{ 
-        fontSize: ".65rem", 
-        color: "#7A8593", 
-        marginTop: 10, 
-        letterSpacing: ".18em", 
-        textTransform: "uppercase", 
-        fontWeight: 600 
-      }}>
-        {label}
+      <div className="flex flex-col pr-2">
+        <div className="font-bold text-xl md:text-2xl text-[var(--c-text-main)] leading-none mb-1 font-sans">
+          {display}<span className="text-[var(--c-accent)]">{suffix}</span>
+        </div>
+        <div className="text-[0.65rem] text-[var(--c-text-muted)] uppercase tracking-wider font-semibold">
+          {label}
+        </div>
       </div>
     </div>
   );
 }
 
-function WordReveal({ text, delayStart = 0, italic = false }: { text: string; delayStart?: number; italic?: boolean }) {
+// Animação de revelação das palavras
+function WordReveal({ text, delayStart = 0 }: { text: string; delayStart?: number }) {
   const words = text.split(" ");
   return (
     <>
       {words.map((word, i) => (
-        <span 
-          key={i} 
-          style={{ 
-            display: "inline-block", 
-            overflow: "hidden", 
-            verticalAlign: "top",
-            paddingBottom: "0.2em",
-            marginBottom: "-0.2em"
-          }}
-        >
-          <span
-            className="word-reveal"
-            style={{
-              display: "inline-block",
-              animationDelay: `${delayStart + i * 90}ms`,
-              fontStyle: italic ? "italic" : undefined,
-              color: italic ? "#C5A570" : undefined,
-              paddingRight: "0.1em"
-            }}
-          >
+        <span key={i} style={{ display: "inline-block", overflow: "hidden", verticalAlign: "top", paddingBottom: "0.2em", marginBottom: "-0.2em" }}>
+          <span className="word-reveal" style={{ display: "inline-block", animationDelay: `${delayStart + i * 90}ms`, paddingRight: "0.15em" }}>
             {word}{i < words.length - 1 ? "\u00A0" : ""}
           </span>
         </span>
@@ -76,124 +46,109 @@ function WordReveal({ text, delayStart = 0, italic = false }: { text: string; de
 }
 
 export function Hero({ goTo }: { goTo: (id: string) => void }) {
-  const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    let raf = 0;
-    const onScroll = () => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
-        raf = 0;
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
+  useEffect(() => { setIsLoaded(true); }, []);
 
   return (
-    <div style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+    <div className="relative min-h-screen flex items-center overflow-hidden bg-[var(--c-bg)] pt-20">
       
-      <div style={{ position: "absolute", inset: 0 }}>
-        <div
-          style={{
-            position: "absolute",
-            top: -80,
-            left: -80,
-            right: -80,
-            bottom: -80,
-            transform: `translateY(${scrollY * 0.08}px)`,
-            willChange: "transform",
-          }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?w=2000&q=85&fit=crop"
-            alt="Clínica odontológica INB Odonto"
-            className="w-full h-full object-cover origin-center"
-            style={{ 
-              filter: "brightness(.95) saturate(.85)",
-              transform: isLoaded ? "scale(1)" : "scale(1.15)",
-              transition: "transform 10s cubic-bezier(0.25, 1, 0.5, 1)" 
-            }}
-          />
-        </div>
-        <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
-      </div>
+      {/* Padrão de Pontilhados no Fundo (Estilo Dotted Pattern da sua foto) */}
+      <svg width="200" height="200" fill="none" viewBox="0 0 100 100" className="absolute top-[15%] right-[5%] z-0 opacity-20 text-[var(--c-primary)] hidden md:block">
+        <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+        </pattern>
+        <rect width="100" height="100" fill="url(#dots)" />
+      </svg>
+      <svg width="150" height="150" fill="none" viewBox="0 0 100 100" className="absolute bottom-[10%] left-[45%] z-0 opacity-20 text-[var(--c-accent)] hidden md:block">
+        <pattern id="dots2" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="2" fill="currentColor" />
+        </pattern>
+        <rect width="100" height="100" fill="url(#dots2)" />
+      </svg>
 
-      <div className="w-full max-w-[1280px] mx-auto relative px-6 md:px-10 pt-32 pb-24 md:pt-40 md:pb-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center z-10">
+      <div className="w-full max-w-[1280px] mx-auto relative px-6 md:px-10 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center z-10">
         
-        <div>
-          <div className="anim-fade-down delay-200">
-            <span className="eyebrow">Águas Claras — Led Office</span>
-          </div>
+        {/* COLUNA ESQUERDA: Textos Formatação Bold (Estilo "Luxe is here") */}
+        <div className="flex flex-col justify-center w-full max-w-xl mx-auto lg:mx-0 relative z-20">
           
-          <h1
-            style={{ ...serif, fontWeight: 400, lineHeight: 1.05, letterSpacing: "-.015em", fontSize: "clamp(2.8rem, 6vw, 5.5rem)", color: "#1E2532", marginBottom: "1.75rem" }}
-          >
-            <WordReveal text="Seu sorriso é a" delayStart={280} />{" "}
-            <br className="hidden md:block"/>
-            <WordReveal text="nossa" delayStart={460} italic />{" "}
-            <WordReveal text="paixão." delayStart={640} />
+          <span className="text-[var(--c-text-muted)] font-semibold tracking-widest uppercase mb-4 block anim-fade-down delay-100 text-sm md:text-base">
+            {globalData.hero.eyebrow}
+          </span>
+          
+          {/* Título Gigante com quebras de linha e Destaque Colorido */}
+          <h1 style={serif} className="text-[clamp(3.2rem,6vw,5.5rem)] leading-[1.05] font-bold text-[var(--c-text-main)] mb-6 anim-fade-down delay-200 uppercase tracking-tight">
+            <span className="block mb-1"><WordReveal text={globalData.hero.title1} delayStart={280} /></span>
+            <span className="text-[var(--c-accent)] block mb-1"><WordReveal text={globalData.hero.title2} delayStart={460} /></span>
+            <span className="block"><WordReveal text={globalData.hero.title3} delayStart={640} /></span>
           </h1>
           
-          <p className="anim-fade-up delay-[600ms]"
-            style={{ color: "#7A8593", fontSize: "1.1rem", lineHeight: 1.85, maxWidth: 460, marginBottom: "2.5rem", fontWeight: 300 }}>
-            Atendimento <strong className="font-medium text-[#1E2532]">personalizado</strong> e todas as especialidades em um só lugar. Excelência e cuidado em saúde e estética dental no Led Office.
+          <p className="anim-fade-up delay-[600ms]" style={{ color: "var(--c-text-muted)", fontSize: "1.15rem", lineHeight: 1.8, marginBottom: "2.5rem", fontWeight: 400 }}>
+            {globalData.hero.desc1} <strong className="font-bold text-[var(--c-text-main)]">{globalData.hero.descBold}</strong>{globalData.hero.desc2}
           </p>
           
-          <div className="anim-fade-up delay-[700ms] flex flex-col sm:flex-row gap-4 mb-14">
-            <button onClick={() => goTo("contato")} className="btn-primary w-full sm:w-auto">Agende sua consulta</button>
-            <button onClick={() => goTo("sobre")} className="btn-outline w-full sm:w-auto text-center">Conheça os especialistas</button>
-          </div>
-
-          <div className="anim-fade-up delay-[800ms] flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-[rgba(30,37,50,.1)]">
-            {stats.map((s) => (
-              <StatCounter 
-                key={s.label} 
-                target={s.target} 
-                suffix={s.suffix} 
-                label={s.label} 
-                thousands={s.thousands} 
-              />
-            ))}
+          <div className="anim-fade-up delay-[700ms] flex flex-col sm:flex-row gap-4 mb-8">
+            <button onClick={() => goTo("contato")} className="btn-primary w-full sm:w-auto text-center rounded-full px-8 py-4 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              {globalData.hero.btnPrimary}
+            </button>
           </div>
         </div>
 
-        <div className="hidden md:flex justify-center lg:justify-end relative">
-          <div className="relative w-[85%] max-w-[380px] aspect-[3/4.2]">
-            <img
-              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80&fit=crop"
-              alt="Paciente sorrindo com confiança"
-              className="w-full h-full object-cover rounded-t-full rounded-b-[2rem] anim-scale-in delay-500 shadow-[0_20px_60px_rgba(30,37,50,0.12)]"
-              style={{ filter: "brightness(1) saturate(.95)" }}
-            />
-            <div className="absolute inset-0 rounded-t-full rounded-b-[2rem] shadow-[inset_0_0_0_1px_rgba(197,165,112,0.3)] pointer-events-none" />
-            
-            <div className="absolute top-12 -left-8 anim-fade-in delay-[1200ms]">
-              <div className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-full shadow-xl border border-white/50 flex items-center gap-4">
-                <div className="w-2 h-2 rounded-full bg-[#C5A570] animate-pulse"></div>
-                <div>
-                  <div className="text-[0.65rem] uppercase tracking-[0.2em] font-bold text-[#7A8593] mb-0.5">Diferencial</div>
-                  <div style={{ ...serif }} className="text-[#1E2532] text-[1.1rem] leading-none">Alinhadores Próprios</div>
-                </div>
-              </div>
-            </div>
+        {/* COLUNA DIREITA: Blobs Orgânicos + Imagem + Cartões Flutuantes */}
+        <div className="relative w-full h-[500px] md:h-[600px] flex justify-center items-center mt-10 lg:mt-0">
+          
+          {/* Forma Orgânica 1 (Fundo - Cor Primária Azul Marinho) */}
+          <svg viewBox="0 0 200 200" className="absolute w-[110%] h-[110%] md:w-[130%] md:h-[130%] text-[var(--c-primary)] opacity-100 z-0 animate-[floatY_8s_ease-in-out_infinite]">
+            <path fill="currentColor" transform="translate(100 100)" d="M48,-64.5C61.4,-54.1,70.9,-38.4,75.4,-21.2C79.8,-4,79.2,14.7,71.2,30.3C63.2,45.9,47.8,58.4,30.8,66.6C13.8,74.8,-4.8,78.7,-22.1,74.5C-39.4,70.3,-55.4,58.1,-65.4,42.5C-75.4,26.9,-79.4,7.9,-75.6,-9.7C-71.8,-27.3,-60.2,-43.5,-45.8,-54C-31.4,-64.5,-15.7,-69.3,1.1,-70.8C17.9,-72.3,35.8,-70.5,48,-64.5Z" />
+          </svg>
 
-          </div>
+          {/* Forma Orgânica 2 (Frente - Cor Secundária Dourado) */}
+          <svg viewBox="0 0 200 200" className="absolute w-[95%] h-[95%] md:w-[110%] md:h-[110%] text-[var(--c-accent)] opacity-90 z-10 animate-[floatY_6s_ease-in-out_infinite_reverse]">
+            <path fill="currentColor" transform="translate(100 100)" d="M41.7,-59.6C54.5,-51.1,65.6,-39.8,71.5,-25.9C77.4,-12,78.1,4.4,73,18.7C67.9,33,57,45.1,43.8,53.4C30.6,61.7,15.3,66.2,-0.2,66.5C-15.7,66.8,-31.4,62.8,-44.6,54.4C-57.8,46,-67.7,33.2,-72.3,18.5C-76.9,3.8,-76.2,-12.6,-69.7,-26.1C-63.2,-39.6,-50.9,-50.2,-37.2,-58.5C-23.5,-66.8,-11.8,-72.8,1.4,-74.7C14.6,-76.6,29.1,-74.4,41.7,-59.6Z" />
+          </svg>
+
+          {/* Imagem Principal da Doutora/Clínica */}
+          {/* DICA DE OURO: Para ficar perfeito como na foto de referência, use uma imagem PNG sem fundo. Mas o código já arredonda para ficar lindo mesmo se for foto quadrada. */}
+          <img 
+            src={globalData.results_cta.imgUrl} 
+            alt="Profissional" 
+            className={`relative z-20 w-[75%] md:w-[65%] h-full object-cover object-center rounded-t-full rounded-b-[2rem] shadow-2xl transition-transform duration-[2s] ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} 
+          />
+
+          {/* Cartões Flutuantes (Glassmorphism) - Puxando os dados exatos do content.tsx */}
+          {/* Cartão 1: Topo Esquerda */}
+          <FloatingStatCard 
+            target={globalData.hero.stats[0].target} 
+            suffix={globalData.hero.stats[0].suffix} 
+            label={globalData.hero.stats[0].label} 
+            thousands={globalData.hero.stats[0].thousands}
+            icon={Shield} 
+            className="top-[10%] -left-[5%] md:-left-[15%] stat-float delay-100" 
+            delay="600ms" 
+          />
+          
+          {/* Cartão 2: Meio Direita */}
+          <FloatingStatCard 
+            target={globalData.hero.stats[2].target} 
+            suffix={globalData.hero.stats[2].suffix} 
+            label={globalData.hero.stats[2].label} 
+            thousands={globalData.hero.stats[2].thousands}
+            icon={Star} 
+            className="top-[45%] -right-[5%] md:-right-[10%] stat-float delay-300" 
+            delay="800ms" 
+          />
+
+          {/* Cartão 3: Base Esquerda */}
+          <FloatingStatCard 
+            target={globalData.hero.stats[1].target} 
+            suffix={globalData.hero.stats[1].suffix} 
+            label={globalData.hero.stats[1].label} 
+            thousands={globalData.hero.stats[1].thousands}
+            icon={Smile} 
+            className="bottom-[10%] left-[0%] md:-left-[10%] stat-float delay-500" 
+            delay="1000ms" 
+          />
+
         </div>
-      </div>
-
-      <div className="anim-fade-in delay-1000 hidden md:flex" style={{ position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)", flexDirection: "column", alignItems: "center", gap: 6, opacity: .6 }}>
-        <span style={{ fontSize: ".55rem", letterSpacing: ".25em", textTransform: "uppercase", color: "#1E2532", fontWeight: 500 }}>Explorar</span>
-        <div style={{ width: 1, height: 45, background: "linear-gradient(to bottom, #1E2532, transparent)" }} />
       </div>
     </div>
   );
