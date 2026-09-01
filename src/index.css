@@ -8,26 +8,26 @@
 }
 
 :root {
-  /* Cores Principais - DHC (Marrom Expresso / Fendi Escuro) */
-  --c-primary: #2A241D;
-  --c-primary-rgb: 42, 36, 29;
-  --c-primary-hover: #1A1612;
+  /* Cores Principais - Dra. Ana Julia (Marrom/Cinza Quente Escuro) */
+  --c-primary: #382F2A;
+  --c-primary-rgb: 56, 47, 42;
+  --c-primary-hover: #241D1A;
   
-  /* Cores de Destaque - DHC (Dourado Champagne) */
-  --c-accent: #C2A476;
-  --c-accent-rgb: 194, 164, 118;
-  --c-accent-hover: #D0B48A;
+  /* Cores de Destaque - Dra. Ana Julia (Dourado da Logo) */
+  --c-accent: #C5A059;
+  --c-accent-rgb: 197, 160, 89;
+  --c-accent-hover: #D8B36D;
   
-  /* Fundos - Tom Pérola Quente / Off-white Sofisticado */
-  --c-bg: #FAF8F5;
-  --c-bg-rgb: 250, 248, 245;
-  --c-bg-alt: #EBE6DF;
-  --c-team-placeholder: #3D352B;
+  /* Fundos - O exato tom Creme/Bege do fundo da Logo (Aplica no site e no header) */
+  --c-bg: #FDF9F1;
+  --c-bg-rgb: 253, 249, 241;
+  --c-bg-alt: #F2ECE0;
+  --c-team-placeholder: #4A4039;
   
   /* Textos */
-  --c-text-main: #2A241D;
-  --c-text-muted: #7A7369;
-  --c-text-light: #B5AEA4;
+  --c-text-main: #382F2A;
+  --c-text-muted: #857A73;
+  --c-text-light: #BDB4AC;
 }
 
 html {
