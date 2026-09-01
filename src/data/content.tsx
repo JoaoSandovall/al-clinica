@@ -8,25 +8,25 @@ export const globalData = {
   // DADOS GERAIS DA CLÍNICA
   // ---------------------------------------------------
   clinica: {
-    nome: "Classe A Odontologia",
-    subtitulo: "Sorrisos bonitos e saudáveis",
+    nome: "DHC Odontologia",
+    subtitulo: "Tecnologia • Humanização • Resultados",
     logoUrl: "/imagens/logo.png",
     contato: {
-      whatsappUrl: "https://wa.me/message/I2NQCGBLXZ6TI1",
+      whatsappUrl: "https://wa.me/5527997155698",
       whatsappLabel: "Falar no WhatsApp",
-      telefoneLabel: "(61) 98374-0136",
-      emailLabel: "classeaodontologia.negocio.site",
-      instagramLabel: "@classeaodontologia no Instagram",
+      telefoneLabel: "(27) 99715-5698",
+      emailLabel: "contato@dhcodontologia.com.br",
+      instagramLabel: "@dhcodontologia no Instagram",
     },
     endereco: {
-      bairroCidade: "Candangolândia - DF",
-      edificio: "QR 3, Conjunto F, Casa 49",
-      detalhado: "Candangolândia, Brasília — DF\nFácil acesso e infraestrutura completa.",
-      comodidades: ["Clínica Odontológica Completa", "Atendimento humanizado", "Equipe multidisciplinar"],
-      mapaGpsUrl: "https://maps.app.goo.gl/Q6baLFjN3c1TPr7r8",
-      mapaEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15352.362039782429!2d-47.96421688261719!3d-15.8518396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a31abdc79ccef%3A0xbac25d83108ace50!2sClasse%20A%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1788263349296!5m2!1spt-BR!2sbr"
+      bairroCidade: "Centro — Linhares, ES",
+      edificio: "Av. Nogueira da Gama, 1351",
+      detalhado: "Centro, Linhares - ES, 29900-043\nClínica odontológica de alto padrão.",
+      comodidades: ["Ambiente acolhedor", "Tecnologia de ponta", "Estética e Bem-estar"],
+      mapaGpsUrl: "https://maps.app.goo.gl/search/Av.+Nogueira+da+Gama,+1351+-+Centro,+Linhares",
+      mapaEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.307561605006!2d-40.06858226119317!3d-19.39911279546829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb625119bccd16f%3A0x18dd249ef2864271!2sDHC%20Odontologia%20Especializada!5e0!3m2!1spt-BR!2sbr!4v1788265335393!5m2!1spt-BR!2sbr"
     },
-    horarios: "Segunda a Sexta\nAberto até as 17:00",
+    horarios: "Segunda a Sexta\nAberto até as 18:00",
   },
 
   // ---------------------------------------------------
@@ -41,21 +41,22 @@ export const globalData = {
   // SEÇÃO: HERO (BANNER INICIAL)
   // ---------------------------------------------------
   hero: {
-    eyebrow: "Candangolândia — DF",
-    title1: "Sorrisos bonitos,",
-    title2: "saudáveis",
-    title3: "& verdadeiros.",
-    desc1: "Transformamos o seu ",
-    descBold: "sorriso!",
-    desc2: " Cuidado humanizado e busca constante por resultados de alta qualidade para você e sua família.",
+    imgUrl: "/imagens/hero.png",
+    eyebrow: "Centro — Linhares, ES",
+    title1: "Odontologia de",
+    title2: "alto padrão",
+    title3: "& tecnologia.",
+    desc1: "Aqui, cada sorriso é planejado de forma ",
+    descBold: "única",
+    desc2: " — com naturalidade, saúde e sofisticação. Seja bem-vindo a essa nova fase. 🤍",
     btnPrimary: "Agende sua consulta",
-    btnOutline: "Conheça a equipe",
+    btnOutline: "Conheça a clínica",
     badgeTitle: "Destaque",
-    badgeDesc: "Atendimento Humanizado",
+    badgeDesc: "Conforto e Excelência",
     stats: [
-      { target: 8, suffix: "+", label: "áreas de atuação", thousands: false },
-      { target: 50, suffix: "+", label: "avaliações no google", thousands: false },
-      { target: 99, suffix: "%", label: "pacientes satisfeitos", thousands: false },
+      { target: 5, suffix: ".0", label: "nota no google", thousands: false },
+      { target: 38, suffix: "+", label: "avaliações reais", thousands: false },
+      { target: 100, suffix: "%", label: "planejamento único", thousands: false },
     ]
   },
 
@@ -64,22 +65,22 @@ export const globalData = {
   // ---------------------------------------------------
   about: {
     eyebrow: "A Clínica",
-    title1: "Compromisso com a",
-    title2: "excelência clínica.",
-    p1: "Na Classe A Odontologia, nosso propósito é entregar cuidado excepcional. Ética, qualificação e conforto guiam cada um dos nossos tratamentos.",
-    p2_1: "Temos uma equipe ",
-    p2_bold: "multidisciplinar qualificada",
-    p2_2: " pronta para somar e trazer ainda mais conhecimento para transformar o seu sorriso nas áreas de implantes, ortodontia e estética.",
+    title1: "Conforto e cuidado",
+    title2: "caminham juntos.",
+    p1: "Bem-vindo à DHC Odontologia, um lugar feito para encantar, cuidar e transformar sorrisos. Cada detalhe deste espaço foi pensado para que você se sinta acolhido desde o primeiro momento.",
+    p2_1: "Mais do que uma clínica, criamos um ambiente onde ",
+    p2_bold: "conforto, cuidado e excelência",
+    p2_2: " caminham juntos, porque acreditamos que a sua experiência é tão importante quanto o seu resultado.",
     topics: [
-      { title: "Múltiplas Especialidades", desc: "De implantes e próteses à ortodontia e reabilitação." },
-      { title: "Atendimento Humanizado", desc: "Cuidado excepcional voltado ao seu conforto." },
-      { title: "Excelência Comprovada", desc: "4.8 estrelas de aprovação no Google." },
-      { title: "Fácil Acesso", desc: "Localização privilegiada na Candangolândia." },
+      { title: "Odontologia de Alto Padrão", desc: "Excelência técnica aliada a um olhar humano." },
+      { title: "Tecnologia e Sofisticação", desc: "Equipamentos de ponta para precisão e estética." },
+      { title: "Ambiente Acolhedor", desc: "Criado para que você se sinta bem desde a recepção." },
+      { title: "Planejamento Único", desc: "Resultados com naturalidade, saúde e bem-estar." },
     ],
     btn: "Agendar uma avaliação",
     gallery: [
-      { url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&fit=crop", title: "Atendimento Humanizado" },
-      { url: "https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?w=1200&q=80&fit=crop", title: "Estrutura Completa" },
+      { url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&fit=crop", title: "Ambiente Acolhedor" },
+      { url: "https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?w=1200&q=80&fit=crop", title: "Estrutura Sofisticada" },
       { url: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1200&q=80&fit=crop", title: "Excelência Clínica" }
     ]
   },
@@ -88,20 +89,20 @@ export const globalData = {
   // SEÇÃO: SERVIÇOS
   // ---------------------------------------------------
   services: {
-    eyebrow: "Tratamentos",
+    eyebrow: "Especialidades",
     title1: "Transformamos o seu",
     title2: "sorriso.",
-    desc1: "Oferecemos uma ",
-    descBold: "atuação completa",
-    desc2: ". Especialistas em implantes, canal, próteses e aparelhos ortodônticos em um só lugar.",
+    desc1: "Um olhar humano em cada detalhe. Oferecemos ",
+    descBold: "tecnologia e excelência técnica",
+    desc2: " para garantir resultados que unem naturalidade, saúde e bem-estar.",
     btn: "Ver todas especialidades",
     list: [
-      { icon: <Shield size={28} strokeWidth={1.2} />, title: "Implante, Canal & Prótese", desc: "Reabilitação total com carga imediata e planejamento personalizado para devolver a sua função mastigatória e autoestima." },
-      { icon: <Smile size={28} strokeWidth={1.2} />, title: "Aparelho Ortodôntico", desc: "Tratamentos modernos e eficazes para o alinhamento dos seus dentes, garantindo um sorriso harmonioso e saudável." },
-      { icon: <Sparkles size={28} strokeWidth={1.2} />, title: "Clareamento & Estética", desc: "Lentes de contato dental e clareamentos seguros para elevar o brilho e a estética natural do seu rosto." },
-      { icon: <Activity size={28} strokeWidth={1.2} />, title: "Reabilitação Oral", desc: "Soluções integradas para pacientes que necessitam de intervenções mais amplas na cavidade bucal." },
-      { icon: <Users size={28} strokeWidth={1.2} />, title: "Odontopediatria", desc: "Prevenção e cuidado lúdico com as crianças, criando desde cedo uma relação amigável e livre de traumas com o dentista." },
-      { icon: <Stethoscope size={28} strokeWidth={1.2} />, title: "Clínica Geral & Limpeza", desc: "Procedimentos de rotina e prevenção constante para manter a integridade dos dentes e gengivas a longo prazo." }
+      { icon: <Sparkles size={28} strokeWidth={1.2} />, title: "Reabilitação Oral", desc: "Devolvemos a função, a saúde e a estética do seu sorriso com tratamentos completos e planejados sob medida para o seu caso." },
+      { icon: <Smile size={28} strokeWidth={1.2} />, title: "Lentes em Resina", desc: "Transformação estética com naturalidade e sofisticação, corrigindo cor e formato dos dentes de forma minimamente invasiva." },
+      { icon: <Shield size={28} strokeWidth={1.2} />, title: "Implantes Dentários", desc: "Segurança e tecnologia de ponta para a reposição de dentes perdidos, recuperando a sua autoestima e conforto ao mastigar." },
+      { icon: <Activity size={28} strokeWidth={1.2} />, title: "Odontologia Estética", desc: "Procedimentos avançados voltados para a harmonização e beleza do seu sorriso, sempre com foco em resultados elegantes." },
+      { icon: <Stethoscope size={28} strokeWidth={1.2} />, title: "Saúde e Bem Estar", desc: "Acreditamos que a saúde bucal reflete na saúde geral. Realizamos prevenções e tratamentos focados na sua qualidade de vida." },
+      { icon: <Users size={28} strokeWidth={1.2} />, title: "Atendimento Humanizado", desc: "Cada sorriso é único. Nossa equipe está preparada para entender suas necessidades e proporcionar uma experiência excepcional." }
     ]
   },
 
@@ -111,11 +112,9 @@ export const globalData = {
   team: {
     title: "Nossos Especialistas",
     members: [
-      { name: "Dr. Daniel", cro: "Especialista", specialty: "Implante, Canal e Prótese", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Regiane Farias", cro: "Ortodontista", specialty: "Ortodontia", img: "https://images.unsplash.com/photo-1594824432258-f9b1a50c3d9a?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Thalia Duarte", cro: "Especialista", specialty: "Implante e Prótese", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Thayná Santana", cro: "Clínica Geral", specialty: "Cuidado Humanizado", img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Geisy Christina", cro: "Clínica Geral", specialty: "Excelência Clínica", img: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=400&h=500&fit=crop&auto=format" },
+      { name: "Especialista DHC", cro: "Reabilitação Oral", specialty: "Lentes e Implantes", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&auto=format" },
+      { name: "Especialista DHC", cro: "Odontologia Estética", specialty: "Saúde e Bem Estar", img: "https://images.unsplash.com/photo-1594824432258-f9b1a50c3d9a?w=400&h=500&fit=crop&auto=format" },
+      { name: "Especialista DHC", cro: "Atendimento Clínico", specialty: "Cuidado Humanizado", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
     ]
   },
 
@@ -123,16 +122,16 @@ export const globalData = {
   // SEÇÃO: CONVÊNIOS E ESTRUTURA
   // ---------------------------------------------------
   convenios: {
-    eyebrow: "A Estrutura Classe A",
-    title1: "Cuidado que vai",
-    title2: "além da",
-    title3: "estética.",
-    desc: "Nossa clínica foi pensada para entregar segurança e tecnologia do diagnóstico ao tratamento final, centralizando diversas soluções no mesmo lugar.",
+    eyebrow: "A Estrutura DHC",
+    title1: "Um lugar feito para",
+    title2: "encantar",
+    title3: "e cuidar.",
+    desc: "Cada detalhe deste espaço foi pensado para que você se sinta acolhido desde o primeiro momento. Um ambiente onde conforto, cuidado e excelência caminham juntos.",
     btn: "Agendar minha consulta",
     list: [
-      { title: "Múltiplas Especialidades", content: "Diferente das clínicas comuns, possuímos uma equipe multidisciplinar capacitada em Ortodontia, Implantes, Próteses e Pediatria, facilitando todo o seu plano de tratamento." },
-      { title: "Carga Imediata", content: "Recupere o seu sorriso com agilidade. Nossos profissionais realizam avaliações criteriosas para protocolos de implantes eficientes." },
-      { title: "Estética e Prevenção", content: "De limpezas a lentes de contato dental, nosso foco principal é a preservação da estrutura natural dos seus dentes aliada à estética premium." }
+      { title: "Odontologia de Alto Padrão", content: "Combinamos excelência técnica com um ambiente moderno e acolhedor. Nossa clínica no centro de Linhares foi projetada para oferecer a melhor experiência." },
+      { title: "Tecnologia e Precisão", content: "Utilizamos as mais recentes inovações da odontologia, como lentes em resina e implantes avançados, para entregar resultados de alta durabilidade e naturalidade." },
+      { title: "Olhar Humano", content: "Aqui você não é apenas um paciente. Nós acreditamos que a sua experiência durante todo o tratamento é tão importante quanto o seu resultado final." }
     ]
   },
 
@@ -142,12 +141,12 @@ export const globalData = {
   testimonials: {
     eyebrow: "Depoimentos",
     title: "O que nossos pacientes dizem",
-    googleScore: "4.8",
-    googleReviews: "53 Avaliações",
+    googleScore: "5.0",
+    googleReviews: "38 Avaliações",
     list: [
-      { name: "Carolina Mendes", role: "Paciente", stars: 5, text: "O atendimento da Classe A é surreal. A doutora não olhou só pros meus dentes, ela entendeu exatamente o que eu queria pro meu sorriso. Recomendo muito!", img: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=80&h=80&fit=crop&auto=format" },
-      { name: "Marcos Oliveira", role: "Paciente", stars: 5, text: "Fiz meus implantes e o processo foi excelente. A equipe passa muita segurança e a estrutura da clínica na Candangolândia é nota dez.", img: "https://images.unsplash.com/photo-1667133295308-9ef24f71952e?w=80&h=80&fit=crop&auto=format" },
-      { name: "Patrícia Souza", role: "Mãe de Paciente", stars: 5, text: "Meu filho tinha muito medo de dentista e hoje ele adora as consultas de odontopediatria. O trabalho humanizado faz toda a diferença.", img: "https://images.unsplash.com/photo-1562337404-3044c84ac061?w=80&h=80&fit=crop&auto=format" }
+      { name: "Paciente DHC", role: "Paciente", stars: 5, text: "O atendimento da DHC é impecável. O espaço é maravilhoso e os profissionais têm um cuidado humano muito grande em cada detalhe.", img: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=80&h=80&fit=crop&auto=format" },
+      { name: "Paciente DHC", role: "Paciente", stars: 5, text: "Fiz minhas lentes em resina e o resultado ficou com uma naturalidade incrível. A tecnologia e a sofisticação da clínica me passaram muita segurança.", img: "https://images.unsplash.com/photo-1667133295308-9ef24f71952e?w=80&h=80&fit=crop&auto=format" },
+      { name: "Paciente DHC", role: "Paciente", stars: 5, text: "Desde a recepção até a finalização do meu implante, me senti acolhida. É realmente um ambiente onde o conforto e a excelência caminham juntos.", img: "https://images.unsplash.com/photo-1562337404-3044c84ac061?w=80&h=80&fit=crop&auto=format" }
     ]
   },
 
@@ -159,11 +158,11 @@ export const globalData = {
     title1: "Transformamos o",
     title2: "seu sorriso!",
     p1: "A",
-    p_bold1: "excelência do nosso trabalho",
-    p2: "é refletida na qualidade de vida de cada paciente. Explore nossa",
+    p_bold1: "excelência técnica",
+    p2: "é refletida na naturalidade de cada sorriso. Explore nossa",
     p_bold2: "galeria de casos clínicos",
     p3: "e conheça o padrão da",
-    p_bold3: "Classe A Odontologia",
+    p_bold3: "DHC Odontologia",
     btn: "Ver Galeria de Casos",
     imgUrl: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80"
   },
@@ -174,10 +173,10 @@ export const globalData = {
   faq: {
     title: "Perguntas Frequentes",
     list: [
-      { q: "Onde a Classe A Odontologia está localizada?", a: "Estamos na Qr 3, conjunto F, casa 49, na Candangolândia - DF. Oferecemos um ambiente moderno e de fácil acesso para o seu conforto." },
-      { q: "A clínica atende diversas especialidades?", a: "Sim! Nossa equipe multidisciplinar atende Implantes, Canal, Prótese, Ortodontia, Clareamento, Reabilitação Oral e Odontopediatria." },
-      { q: "Qual o horário de funcionamento da clínica?", a: "Atendemos de segunda a sexta-feira, abertos até as 17:00. Entre em contato pelo nosso WhatsApp para verificar a disponibilidade dos especialistas." },
-      { q: "Vocês trabalham com lentes de contato dental?", a: "Trabalhamos com estética completa, incluindo facetas, lentes de contato e clareamentos seguros para transformar a harmonia do seu rosto." }
+      { q: "Onde a DHC Odontologia está localizada?", a: "Estamos na Av. Nogueira da Gama, 1351, no Centro de Linhares - ES. Um espaço criado com foco no seu bem-estar e conforto." },
+      { q: "Quais tratamentos estéticos vocês realizam?", a: "Trabalhamos com reabilitação oral, estética avançada e lentes em resina, sempre priorizando a naturalidade e a saúde do seu sorriso." },
+      { q: "Qual o horário de funcionamento da clínica?", a: "Atendemos de segunda a sexta-feira, abertos até as 18:00. Entre em contato pelo nosso WhatsApp para agendar sua avaliação." },
+      { q: "A clínica realiza implantes?", a: "Sim, somos especialistas em implantes dentários. Utilizamos tecnologia de alto padrão para planejar o seu sorriso de forma única e segura." }
     ]
   },
 
@@ -186,8 +185,8 @@ export const globalData = {
   // ---------------------------------------------------
   location: {
     eyebrow: "Endereço &\nAcesso",
-    box1: { title: "Endereço", value1: "QR 3, Conjunto F, Casa 49", value2: "Candangolândia - DF" },
-    box2: { title: "Localização", value1: "Candangolândia, Brasília", value2: "CEP: 71725-306" },
+    box1: { title: "Endereço", value1: "Av. Nogueira da Gama, 1351", value2: "Centro, Linhares - ES" },
+    box2: { title: "Localização", value1: "Linhares, ES", value2: "CEP: 29900-043" },
     box3: { title: "Comodidades" },
     btn: "Abrir no Google Maps"
   },
@@ -199,23 +198,23 @@ export const globalData = {
     eyebrow: "Marque uma Avaliação",
     title1: "Vamos",
     title2: "conversar?",
-    desc: "Entre em contato para agendar sua avaliação ou tirar dúvidas. Nossa equipe técnica está pronta para apresentar o seu plano de tratamento.",
+    desc: "Entre em contato para agendar sua avaliação ou tirar dúvidas. Nossa equipe está pronta para recebê-lo com um olhar humano e atencioso.",
     box1_title: "Endereço",
     box2_title: "Contato Direto",
     box3_title: "Mídias",
     box3_desc1: "Acompanhe o nosso dia a dia",
-    box3_desc2: "@classeaodontologia no Instagram"
+    box3_desc2: "@dhcodontologia no Instagram"
   },
 
   // ---------------------------------------------------
   // SEÇÃO: RODAPÉ
   // ---------------------------------------------------
   footer: {
-    sobre: "Sorrisos bonitos, saudáveis e verdadeiros. Transformamos o seu sorriso com ética e tecnologia na Candangolândia.",
+    sobre: "Um espaço criado para oferecer odontologia de alto padrão, com tecnologia, excelência técnica e um olhar humano.",
     title_tratamentos: "Tratamentos",
     title_contato: "Contato",
-    direitos: "© 2026 Classe A Odontologia. Todos os direitos reservados.",
-    registro: "Candangolândia — Brasília, DF"
+    direitos: "© 2026 DHC Odontologia Especializada. Todos os direitos reservados.",
+    registro: "Centro — Linhares, ES"
   },
 
   // ---------------------------------------------------
@@ -224,19 +223,19 @@ export const globalData = {
   results_page: {
     eyebrow: "Portfólio Clínico",
     title1: "Seu sorriso,",
-    title2: "nossa paixão.",
+    title2: "planejado de forma única.",
     p1: "Navegue pela nossa",
     p_bold1: "galeria de casos",
-    p2: ". O planejamento aliado à nossa",
-    p_bold2: "atenção humana e clínica",
-    p3: "na Candangolândia nos permite entregar os melhores resultados estéticos e funcionais.",
+    p2: ". A tecnologia aliada ao nosso",
+    p_bold2: "olhar humano",
+    p3: "em Linhares nos permite entregar resultados que unem naturalidade, saúde e sofisticação.",
     btnSaberMais: "Agendar caso semelhante",
     btnVoltar: "Retornar à página inicial",
     cases: [
-      { category: "Reabilitação Estética", duration: "Planejamento Personalizado", complaint: "Dentes amarelados e desgastados, comprometendo a harmonia do rosto.", procedure: "Transformação do sorriso com lentes de contato dental guiada pela arquitetura facial da paciente.", beforeImg: "/imagens/lentes-antes.jpg", afterImg: "/imagens/lentes-depois.jpg" },
-      { category: "Ortodontia", duration: "Acompanhamento Contínuo", complaint: "Dentes apinhados afetando a estética e a função mastigatória.", procedure: "Tratamento ortodôntico completo visando o alinhamento perfeito e saudável dos dentes.", beforeImg: "/imagens/alinhamento-antes.jpg", afterImg: "/imagens/alinhamento-depois.jpg" },
-      { category: "Clareamento Clínico", duration: "Sessão Rápida", complaint: "Esmalte escurecido e com manchas superficiais ao longo dos anos.", procedure: "Protocolo de clareamento supervisionado para devolver o brilho natural com segurança.", beforeImg: "/imagens/clareamento-antes.jpg", afterImg: "/imagens/clareamento-depois.jpg" },
-      { category: "Implantes & Próteses", duration: "Tratamento Integrado", complaint: "Ausência dentária e desgaste severo impactando a fala e alimentação.", procedure: "Reabilitação oral através de carga imediata e prótese, devolvendo conforto e estética.", beforeImg: "/imagens/gengivo-antes.jpg", afterImg: "/imagens/gengivo-depois.jpg" }
+      { category: "Lentes em Resina", duration: "Estética e Naturalidade", complaint: "Desgastes e coloração irregular comprometendo a harmonia do rosto.", procedure: "Reabilitação estética com lentes em resina planejadas de forma única e natural.", beforeImg: "/imagens/lentes-antes.jpg", afterImg: "/imagens/lentes-depois.jpg" },
+      { category: "Reabilitação Oral", duration: "Cuidado Completo", complaint: "Função mastigatória e estética afetadas por perdas dentárias.", procedure: "Tratamento integrado devolvendo a saúde, conforto e a beleza do sorriso.", beforeImg: "/imagens/alinhamento-antes.jpg", afterImg: "/imagens/alinhamento-depois.jpg" },
+      { category: "Estética Avançada", duration: "Alta Tecnologia", complaint: "Sorriso com manchas e formato desarmônico ao longo dos anos.", procedure: "Protocolo estético minimamente invasivo para elevar o brilho com sofisticação.", beforeImg: "/imagens/clareamento-antes.jpg", afterImg: "/imagens/clareamento-depois.jpg" },
+      { category: "Implantes Dentários", duration: "Saúde e Bem Estar", complaint: "Ausência dentária impactando a qualidade de vida e a autoestima.", procedure: "Planejamento com tecnologia de ponta para reposição segura e excelência técnica.", beforeImg: "/imagens/gengivo-antes.jpg", afterImg: "/imagens/gengivo-depois.jpg" }
     ]
   }
 };

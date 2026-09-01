@@ -8,26 +8,26 @@
 }
 
 :root {
-  /* Cores Principais - Classe A (Azul Marinho) */
-  --c-primary: #123C70;
-  --c-primary-rgb: 18, 60, 112;
-  --c-primary-hover: #0C284D;
+  /* Cores Principais - DHC (Marrom Expresso / Fendi Escuro) */
+  --c-primary: #2A241D;
+  --c-primary-rgb: 42, 36, 29;
+  --c-primary-hover: #1A1612;
   
-  /* Cores de Destaque - Classe A (Ciano/Azul Claro) */
-  --c-accent: #3BA4DD;
-  --c-accent-rgb: 59, 164, 221;
-  --c-accent-hover: #2F83B0;
+  /* Cores de Destaque - DHC (Dourado Champagne) */
+  --c-accent: #C2A476;
+  --c-accent-rgb: 194, 164, 118;
+  --c-accent-hover: #D0B48A;
   
-  /* Fundos - Tom clínico gelo/azulado bem claro */
-  --c-bg: #F4F7FA;
-  --c-bg-rgb: 244, 247, 250;
-  --c-bg-alt: #E8EEF5;
-  --c-team-placeholder: #1E4E8A;
+  /* Fundos - Tom Pérola Quente / Off-white Sofisticado */
+  --c-bg: #FAF8F5;
+  --c-bg-rgb: 250, 248, 245;
+  --c-bg-alt: #EBE6DF;
+  --c-team-placeholder: #3D352B;
   
   /* Textos */
-  --c-text-main: #1A2B42;
-  --c-text-muted: #6B7F99;
-  --c-text-light: #A0B2C7;
+  --c-text-main: #2A241D;
+  --c-text-muted: #7A7369;
+  --c-text-light: #B5AEA4;
 }
 
 html {

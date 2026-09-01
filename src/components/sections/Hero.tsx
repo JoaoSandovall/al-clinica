@@ -108,7 +108,7 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
 
           {/* Imagem Principal da Doutora/Clínica: FORMATO RETANGULAR ELEGANTE AJUSTADO */}
           <img 
-            src={globalData.results_cta.imgUrl} 
+            src={globalData.hero.imgUrl}
             alt="Profissional" 
             className={`relative z-20 w-[85%] md:w-[75%] h-[420px] md:h-[500px] object-cover object-center rounded-[2.5rem] shadow-2xl border-[6px] border-white/30 transition-transform duration-[2s] ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} 
           />
