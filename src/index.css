@@ -8,26 +8,26 @@
 }
 
 :root {
-  /* Cores Principais */
-  --c-primary: #1E2532;
-  --c-primary-rgb: 30, 37, 50;
-  --c-primary-hover: #121720;
+  /* Cores Principais - Classe A (Azul Marinho) */
+  --c-primary: #123C70;
+  --c-primary-rgb: 18, 60, 112;
+  --c-primary-hover: #0C284D;
   
-  /* Cores de Destaque */
-  --c-accent: #C5A570;
-  --c-accent-rgb: 197, 165, 112;
-  --c-accent-hover: #D4B98E;
+  /* Cores de Destaque - Classe A (Ciano/Azul Claro) */
+  --c-accent: #3BA4DD;
+  --c-accent-rgb: 59, 164, 221;
+  --c-accent-hover: #2F83B0;
   
-  /* Fundos */
-  --c-bg: #F5F3F0;
-  --c-bg-rgb: 245, 243, 240;
-  --c-bg-alt: #EAE6E1;
-  --c-team-placeholder: #2A3446;
+  /* Fundos - Tom clínico gelo/azulado bem claro */
+  --c-bg: #F4F7FA;
+  --c-bg-rgb: 244, 247, 250;
+  --c-bg-alt: #E8EEF5;
+  --c-team-placeholder: #1E4E8A;
   
   /* Textos */
-  --c-text-main: #1E2532;
-  --c-text-muted: #7A8593;
-  --c-text-light: #A0AAB5;
+  --c-text-main: #1A2B42;
+  --c-text-muted: #6B7F99;
+  --c-text-light: #A0B2C7;
 }
 
 html {

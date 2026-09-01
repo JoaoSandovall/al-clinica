@@ -52,14 +52,14 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
   return (
     <div className="relative min-h-screen flex items-center overflow-hidden bg-[var(--c-bg)] pt-20">
       
-      {/* Padrão de Pontilhados no Fundo (Estilo Dotted Pattern da sua foto) */}
-      <svg width="200" height="200" fill="none" viewBox="0 0 100 100" className="absolute top-[15%] right-[5%] z-0 opacity-20 text-[var(--c-primary)] hidden md:block">
+      {/* Padrão de Pontilhados no Fundo REPOSICIONADO E AJUSTADO */}
+      <svg width="150" height="160" fill="none" viewBox="0 0 100 100" className="absolute top-[10%] lg:right-[16%] right-[4%] z-0 opacity-20 text-[var(--c-primary)] hidden md:block">
         <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="1.5" fill="currentColor" />
         </pattern>
         <rect width="100" height="100" fill="url(#dots)" />
       </svg>
-      <svg width="150" height="150" fill="none" viewBox="0 0 100 100" className="absolute bottom-[10%] left-[45%] z-0 opacity-20 text-[var(--c-accent)] hidden md:block">
+      <svg width="140" height="140" fill="none" viewBox="0 0 100 100" className="absolute bottom-[5%] lg:left-[45%] left-[40%] z-0 opacity-20 text-[var(--c-accent)] hidden md:block">
         <pattern id="dots2" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="2" fill="currentColor" />
         </pattern>
@@ -68,7 +68,7 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
 
       <div className="w-full max-w-[1280px] mx-auto relative px-6 md:px-10 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center z-10">
         
-        {/* COLUNA ESQUERDA: Textos Formatação Bold (Estilo "Luxe is here") */}
+        {/* COLUNA ESQUERDA: Textos Formatação Bold */}
         <div className="flex flex-col justify-center w-full max-w-xl mx-auto lg:mx-0 relative z-20">
           
           <span className="text-[var(--c-text-muted)] font-semibold tracking-widest uppercase mb-4 block anim-fade-down delay-100 text-sm md:text-base">
@@ -106,15 +106,13 @@ export function Hero({ goTo }: { goTo: (id: string) => void }) {
             <path fill="currentColor" transform="translate(100 100)" d="M41.7,-59.6C54.5,-51.1,65.6,-39.8,71.5,-25.9C77.4,-12,78.1,4.4,73,18.7C67.9,33,57,45.1,43.8,53.4C30.6,61.7,15.3,66.2,-0.2,66.5C-15.7,66.8,-31.4,62.8,-44.6,54.4C-57.8,46,-67.7,33.2,-72.3,18.5C-76.9,3.8,-76.2,-12.6,-69.7,-26.1C-63.2,-39.6,-50.9,-50.2,-37.2,-58.5C-23.5,-66.8,-11.8,-72.8,1.4,-74.7C14.6,-76.6,29.1,-74.4,41.7,-59.6Z" />
           </svg>
 
-          {/* Imagem Principal da Doutora/Clínica */}
-          {/* DICA DE OURO: Para ficar perfeito como na foto de referência, use uma imagem PNG sem fundo. Mas o código já arredonda para ficar lindo mesmo se for foto quadrada. */}
+          {/* Imagem Principal da Doutora/Clínica: FORMATO RETANGULAR ELEGANTE AJUSTADO */}
           <img 
             src={globalData.results_cta.imgUrl} 
             alt="Profissional" 
-            className={`relative z-20 w-[75%] md:w-[65%] h-full object-cover object-center rounded-t-full rounded-b-[2rem] shadow-2xl transition-transform duration-[2s] ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} 
+            className={`relative z-20 w-[85%] md:w-[75%] h-[420px] md:h-[500px] object-cover object-center rounded-[2.5rem] shadow-2xl border-[6px] border-white/30 transition-transform duration-[2s] ${isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`} 
           />
 
-          {/* Cartões Flutuantes (Glassmorphism) - Puxando os dados exatos do content.tsx */}
           {/* Cartão 1: Topo Esquerda */}
           <FloatingStatCard 
             target={globalData.hero.stats[0].target} 

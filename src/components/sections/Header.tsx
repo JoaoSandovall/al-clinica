@@ -31,13 +31,11 @@ export function Header({ goTo }: { goTo: (id: string) => void }) {
     >
       <div className="px-6 md:px-10 max-w-[1280px] mx-auto flex items-center justify-between h-[5rem]">
         <div className="anim-fade-down flex items-center gap-3 cursor-pointer select-none shrink-0" onClick={() => { window.scrollTo({ top: 0, behavior: "smooth" }); setMenuOpen(false); }}>
-          <div className="flex items-center justify-center shrink-0 border border-[var(--c-accent)] rounded-full w-11 h-11 bg-white shadow-sm">
-            <svg viewBox="0 0 100 100" width={26} height={26}>
-              <text x="50%" y="65%" textAnchor="middle" fill="var(--c-primary)" fontSize="58" fontFamily="Georgia, serif" letterSpacing="-4">
-                {globalData.clinica.logoLetras.l1}<tspan fill="var(--c-accent)">{globalData.clinica.logoLetras.l2}</tspan>{globalData.clinica.logoLetras.l3}
-              </text>
-            </svg>
-          </div>
+          <img 
+            src={globalData.clinica.logoUrl} 
+            alt={`Logo ${globalData.clinica.nome}`} 
+            className="h-10 md:h-12 w-auto object-contain shrink-0" 
+          />
           <div className="flex flex-col justify-center">
             <span style={{ ...serif, fontWeight: 500, fontSize: "1.3rem", letterSpacing: "0.02em", color: "var(--c-text-main)", display: "block", lineHeight: 1 }}>
               {globalData.clinica.nome}

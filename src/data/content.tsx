@@ -1,15 +1,6 @@
 import { CSSProperties } from "react";
 import { Smile, Sparkles, Activity, Shield, Users, Stethoscope } from "lucide-react";
 
-import lentesAntes from "../imagens/lentes-antes.jpg";
-import lentesDepois from "../imagens/lentes-depois.jpg";
-import clareamentoAntes from "../imagens/clareamento-antes.jpg";
-import clareamentoDepois from "../imagens/clareamento-depois.jpg";
-import alinhamentoAntes from "../imagens/alinhamento-antes.jpg";
-import alinhamentoDepois from "../imagens/alinhamento-depois.jpg";
-import gengivoAntes from "../imagens/gengivo-antes.jpg";
-import gengivoDepois from "../imagens/gengivo-depois.jpg";
-
 export const serif: CSSProperties = { fontFamily: "'Cormorant Garamond', Georgia, serif" };
 
 export const globalData = {
@@ -17,25 +8,25 @@ export const globalData = {
   // DADOS GERAIS DA CLÍNICA
   // ---------------------------------------------------
   clinica: {
-    nome: "INB Odonto",
-    subtitulo: "Odontologia Especializada",
-    logoLetras: { l1: "I", l2: "N", l3: "B" },
+    nome: "Classe A Odontologia",
+    subtitulo: "Sorrisos bonitos e saudáveis",
+    logoUrl: "/imagens/logo.png",
     contato: {
-      whatsappUrl: "https://wa.me/5561981065655",
+      whatsappUrl: "https://wa.me/message/I2NQCGBLXZ6TI1",
       whatsappLabel: "Falar no WhatsApp",
-      telefoneLabel: "(61) 98106-5655",
-      emailLabel: "inbodonto@gmail.com",
-      instagramLabel: "@inbodonto no Instagram",
+      telefoneLabel: "(61) 98374-0136",
+      emailLabel: "classeaodontologia.negocio.site",
+      instagramLabel: "@classeaodontologia no Instagram",
     },
     endereco: {
-      bairroCidade: "Águas Claras - DF",
-      edificio: "Led Office Torre 2, Sala 210",
-      detalhado: "Águas Claras, Brasília — DF\nFácil acesso e excelente infraestrutura.",
-      comodidades: ["Estacionamento no local", "Acessibilidade completa", "Segurança e conforto"],
-      mapaGpsUrl: "https://maps.app.goo.gl/dmXmzkPP1W4Q7FXW9",
-      mapaEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.384638706312!2d-48.04638818514457!3d-15.839379889022635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a333c985beb45%3A0x5aad173a677e222a!2sINB%20ODONTO!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+      bairroCidade: "Candangolândia - DF",
+      edificio: "QR 3, Conjunto F, Casa 49",
+      detalhado: "Candangolândia, Brasília — DF\nFácil acesso e infraestrutura completa.",
+      comodidades: ["Clínica Odontológica Completa", "Atendimento humanizado", "Equipe multidisciplinar"],
+      mapaGpsUrl: "https://maps.app.goo.gl/Q6baLFjN3c1TPr7r8",
+      mapaEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15352.362039782429!2d-47.96421688261719!3d-15.8518396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a31abdc79ccef%3A0xbac25d83108ace50!2sClasse%20A%20Odontologia!5e0!3m2!1spt-BR!2sbr!4v1788263349296!5m2!1spt-BR!2sbr"
     },
-    horarios: "Seg a Sex: 08h às 19h\nSábados: 08h às 12h",
+    horarios: "Segunda a Sexta\nAberto até as 17:00",
   },
 
   // ---------------------------------------------------
@@ -50,21 +41,21 @@ export const globalData = {
   // SEÇÃO: HERO (BANNER INICIAL)
   // ---------------------------------------------------
   hero: {
-    eyebrow: "Águas Claras — Led Office",
-    title1: "Seu sorriso é a",
-    title2: "nossa", // Este texto fica em itálico e com cor de destaque
-    title3: "paixão.",
-    desc1: "Atendimento ",
-    descBold: "personalizado",
-    desc2: " e todas as especialidades em um só lugar. Excelência e cuidado em saúde e estética dental no Led Office.",
+    eyebrow: "Candangolândia — DF",
+    title1: "Sorrisos bonitos,",
+    title2: "saudáveis",
+    title3: "& verdadeiros.",
+    desc1: "Transformamos o seu ",
+    descBold: "sorriso!",
+    desc2: " Cuidado humanizado e busca constante por resultados de alta qualidade para você e sua família.",
     btnPrimary: "Agende sua consulta",
-    btnOutline: "Conheça os especialistas",
-    badgeTitle: "Diferencial",
-    badgeDesc: "Alinhadores Próprios",
+    btnOutline: "Conheça a equipe",
+    badgeTitle: "Destaque",
+    badgeDesc: "Atendimento Humanizado",
     stats: [
-      { target: 5, suffix: "+", label: "especialidades clínicas", thousands: false },
-      { target: 100, suffix: "%", label: "alinhadores in-office", thousands: false },
-      { target: 99, suffix: "%", label: "satisfação", thousands: false },
+      { target: 8, suffix: "+", label: "áreas de atuação", thousands: false },
+      { target: 50, suffix: "+", label: "avaliações no google", thousands: false },
+      { target: 99, suffix: "%", label: "pacientes satisfeitos", thousands: false },
     ]
   },
 
@@ -73,23 +64,23 @@ export const globalData = {
   // ---------------------------------------------------
   about: {
     eyebrow: "A Clínica",
-    title1: "Cada paciente é",
-    title2: "um universo de possibilidades.",
-    p1: "Na INB, não vemos apenas um caso. Nós entendemos as dores, alegrias e expectativas antes de apresentar o melhor plano de tratamento para você.",
-    p2_1: "Aqui, a paixão por ",
-    p2_bold: "sorrisos alinhados e saudáveis",
-    p2_2: " vem de berço. Com uma equipe especializada, desde a odontopediatria até a reabilitação oral e DTM, cuidamos da saúde da sua família como um todo.",
+    title1: "Compromisso com a",
+    title2: "excelência clínica.",
+    p1: "Na Classe A Odontologia, nosso propósito é entregar cuidado excepcional. Ética, qualificação e conforto guiam cada um dos nossos tratamentos.",
+    p2_1: "Temos uma equipe ",
+    p2_bold: "multidisciplinar qualificada",
+    p2_2: " pronta para somar e trazer ainda mais conhecimento para transformar o seu sorriso nas áreas de implantes, ortodontia e estética.",
     topics: [
-      { title: "Alinhadores Próprios", desc: "Produção in-office para mais praticidade." },
-      { title: "Especialistas", desc: "Equipe referência em reabilitação e DTM." },
-      { title: "Odontopediatria", desc: "Cuidado lúdico desde os 2 meses de idade." },
-      { title: "Localização Premium", desc: "No coração de Águas Claras (Led Office)." },
+      { title: "Múltiplas Especialidades", desc: "De implantes e próteses à ortodontia e reabilitação." },
+      { title: "Atendimento Humanizado", desc: "Cuidado excepcional voltado ao seu conforto." },
+      { title: "Excelência Comprovada", desc: "4.8 estrelas de aprovação no Google." },
+      { title: "Fácil Acesso", desc: "Localização privilegiada na Candangolândia." },
     ],
-    btn: "Agendar uma visita",
+    btn: "Agendar uma avaliação",
     gallery: [
-      { url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&fit=crop", title: "Atendimento Personalizado" },
+      { url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&fit=crop", title: "Atendimento Humanizado" },
       { url: "https://images.unsplash.com/photo-1600170311833-c2cf5280ce49?w=1200&q=80&fit=crop", title: "Estrutura Completa" },
-      { url: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1200&q=80&fit=crop", title: "Tecnologia In-Office" }
+      { url: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=1200&q=80&fit=crop", title: "Excelência Clínica" }
     ]
   },
 
@@ -98,19 +89,19 @@ export const globalData = {
   // ---------------------------------------------------
   services: {
     eyebrow: "Tratamentos",
-    title1: "Atenção",
-    title2: "humana.", // Itálico destaque
+    title1: "Transformamos o seu",
+    title2: "sorriso.",
     desc1: "Oferecemos uma ",
     descBold: "atuação completa",
-    desc2: ". Seja diagnosticando lesões em estomatologia ou criando alinhadores no nosso laboratório interno.",
-    btn: "Agendar avaliação",
+    desc2: ". Especialistas em implantes, canal, próteses e aparelhos ortodônticos em um só lugar.",
+    btn: "Ver todas especialidades",
     list: [
-      { icon: <Sparkles size={28} strokeWidth={1.2} />, title: "Dentística & Reabilitação", desc: "Transformação de sorrisos com dedicação. Avaliamos cada caso como um universo de possibilidades, planejando a reabilitação estética ideal para você." },
-      { icon: <Smile size={28} strokeWidth={1.2} />, title: "Ortodontia & Alinhadores", desc: "Produção in-office de alinhadores transparentes e aparelhos convencionais, oferecendo conforto, praticidade e resultados estéticos de excelência." },
-      { icon: <Shield size={28} strokeWidth={1.2} />, title: "Estomatologia", desc: "Prevenção, diagnóstico e tratamento de lesões dentro e fora da cavidade bucal, devolvendo conforto e garantindo a sua saúde integral." },
-      { icon: <Activity size={28} strokeWidth={1.2} />, title: "DTM & Dor Orofacial", desc: "Diagnóstico e alívio para dores na mandíbula, estalos, dificuldades de mastigação e dores de cabeça relacionadas à Articulação Temporomandibular." },
-      { icon: <Users size={28} strokeWidth={1.2} />, title: "Odontopediatria", desc: "Uma abordagem lúdica e sensível para encantar os pequenos, focando na prevenção e saúde bucal desde a infância para um futuro sem intervenções." },
-      { icon: <Stethoscope size={28} strokeWidth={1.2} />, title: "Clínica Geral", desc: "Diagnósticos precisos, limpezas periódicas e procedimentos de rotina para manter a integridade do seu sorriso sempre em dia." }
+      { icon: <Shield size={28} strokeWidth={1.2} />, title: "Implante, Canal & Prótese", desc: "Reabilitação total com carga imediata e planejamento personalizado para devolver a sua função mastigatória e autoestima." },
+      { icon: <Smile size={28} strokeWidth={1.2} />, title: "Aparelho Ortodôntico", desc: "Tratamentos modernos e eficazes para o alinhamento dos seus dentes, garantindo um sorriso harmonioso e saudável." },
+      { icon: <Sparkles size={28} strokeWidth={1.2} />, title: "Clareamento & Estética", desc: "Lentes de contato dental e clareamentos seguros para elevar o brilho e a estética natural do seu rosto." },
+      { icon: <Activity size={28} strokeWidth={1.2} />, title: "Reabilitação Oral", desc: "Soluções integradas para pacientes que necessitam de intervenções mais amplas na cavidade bucal." },
+      { icon: <Users size={28} strokeWidth={1.2} />, title: "Odontopediatria", desc: "Prevenção e cuidado lúdico com as crianças, criando desde cedo uma relação amigável e livre de traumas com o dentista." },
+      { icon: <Stethoscope size={28} strokeWidth={1.2} />, title: "Clínica Geral & Limpeza", desc: "Procedimentos de rotina e prevenção constante para manter a integridade dos dentes e gengivas a longo prazo." }
     ]
   },
 
@@ -118,11 +109,13 @@ export const globalData = {
   // SEÇÃO: CORPO CLÍNICO (EQUIPE)
   // ---------------------------------------------------
   team: {
-    title: "Nossas Especialistas",
+    title: "Nossos Especialistas",
     members: [
-      { name: "Dra. Thais", cro: "Estomatologia", specialty: "Diagnóstico de Lesões", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Lara", cro: "Dentística", specialty: "Reabilitação Oral", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&auto=format" },
-      { name: "Dra. Rafaella Gadelha", cro: "Ortodontia", specialty: "Alinhadores In-Office", img: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=400&h=500&fit=crop&auto=format" },
+      { name: "Dr. Daniel", cro: "Especialista", specialty: "Implante, Canal e Prótese", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&auto=format" },
+      { name: "Dra. Regiane Farias", cro: "Ortodontista", specialty: "Ortodontia", img: "https://images.unsplash.com/photo-1594824432258-f9b1a50c3d9a?w=400&h=500&fit=crop&auto=format" },
+      { name: "Dra. Thalia Duarte", cro: "Especialista", specialty: "Implante e Prótese", img: "https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=400&h=500&fit=crop&auto=format" },
+      { name: "Dra. Thayná Santana", cro: "Clínica Geral", specialty: "Cuidado Humanizado", img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=500&fit=crop&auto=format" },
+      { name: "Dra. Geisy Christina", cro: "Clínica Geral", specialty: "Excelência Clínica", img: "https://images.unsplash.com/photo-1681939282781-341ac4f61996?w=400&h=500&fit=crop&auto=format" },
     ]
   },
 
@@ -130,16 +123,16 @@ export const globalData = {
   // SEÇÃO: CONVÊNIOS E ESTRUTURA
   // ---------------------------------------------------
   convenios: {
-    eyebrow: "A Estrutura INB",
+    eyebrow: "A Estrutura Classe A",
     title1: "Cuidado que vai",
     title2: "além da",
-    title3: "estética.", // itálico
-    desc: "Acreditamos que a saúde bucal é o reflexo da sua saúde como um todo. Por isso, aliamos tecnologia e atendimento humanizado para resolver qualquer incômodo.",
-    btn: "Quero marcar uma consulta",
+    title3: "estética.",
+    desc: "Nossa clínica foi pensada para entregar segurança e tecnologia do diagnóstico ao tratamento final, centralizando diversas soluções no mesmo lugar.",
+    btn: "Agendar minha consulta",
     list: [
-      { title: "Alinhadores Próprios (In-Office)", content: "Diferente de clínicas tradicionais, possuímos nossa própria produção de alinhadores transparentes. Isso nos permite oferecer mais praticidade, velocidade na entrega e conforto durante todo o seu tratamento ortodôntico." },
-      { title: "Especialista em DTM", content: "Dores de cabeça constantes e estalos na mandíbula não são normais. A Dra. Letícia Ventura é especialista no diagnóstico e tratamento da Disfunção Temporomandibular, devolvendo o conforto para sua fala e mastigação." },
-      { title: "Estrutura Integrada", content: "Da odontopediatria com as crianças até as complexas reabilitações orais, a INB concentra uma equipe de especialistas no mesmo local. Você não será mais um caso, você terá atenção profissional e humana." }
+      { title: "Múltiplas Especialidades", content: "Diferente das clínicas comuns, possuímos uma equipe multidisciplinar capacitada em Ortodontia, Implantes, Próteses e Pediatria, facilitando todo o seu plano de tratamento." },
+      { title: "Carga Imediata", content: "Recupere o seu sorriso com agilidade. Nossos profissionais realizam avaliações criteriosas para protocolos de implantes eficientes." },
+      { title: "Estética e Prevenção", content: "De limpezas a lentes de contato dental, nosso foco principal é a preservação da estrutura natural dos seus dentes aliada à estética premium." }
     ]
   },
 
@@ -149,12 +142,12 @@ export const globalData = {
   testimonials: {
     eyebrow: "Depoimentos",
     title: "O que nossos pacientes dizem",
-    googleScore: "5.0",
-    googleReviews: "99% Satisfação",
+    googleScore: "4.8",
+    googleReviews: "53 Avaliações",
     list: [
-      { name: "Carolina Mendes", role: "Paciente", stars: 5, text: "O atendimento da INB é surreal. A Dra. Lara não olhou só pros meus dentes, ela entendeu exatamente o que eu queria pro meu sorriso. Recomendo muito!", img: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=80&h=80&fit=crop&auto=format" },
-      { name: "Marcos Oliveira", role: "Paciente", stars: 5, text: "Sofria com dores de cabeça e estalos na mandíbula há anos. O tratamento de DTM com a Dra. Letícia devolveu minha qualidade de vida.", img: "https://images.unsplash.com/photo-1667133295308-9ef24f71952e?w=80&h=80&fit=crop&auto=format" },
-      { name: "Patrícia Souza", role: "Mãe de Paciente", stars: 5, text: "A Dra. Clara é um anjo! Meu filho tinha muito medo de dentista e hoje ele adora as consultas. O trabalho de conscientização com a família faz toda a diferença.", img: "https://images.unsplash.com/photo-1562337404-3044c84ac061?w=80&h=80&fit=crop&auto=format" }
+      { name: "Carolina Mendes", role: "Paciente", stars: 5, text: "O atendimento da Classe A é surreal. A doutora não olhou só pros meus dentes, ela entendeu exatamente o que eu queria pro meu sorriso. Recomendo muito!", img: "https://images.unsplash.com/photo-1489278353717-f64c6ee8a4d2?w=80&h=80&fit=crop&auto=format" },
+      { name: "Marcos Oliveira", role: "Paciente", stars: 5, text: "Fiz meus implantes e o processo foi excelente. A equipe passa muita segurança e a estrutura da clínica na Candangolândia é nota dez.", img: "https://images.unsplash.com/photo-1667133295308-9ef24f71952e?w=80&h=80&fit=crop&auto=format" },
+      { name: "Patrícia Souza", role: "Mãe de Paciente", stars: 5, text: "Meu filho tinha muito medo de dentista e hoje ele adora as consultas de odontopediatria. O trabalho humanizado faz toda a diferença.", img: "https://images.unsplash.com/photo-1562337404-3044c84ac061?w=80&h=80&fit=crop&auto=format" }
     ]
   },
 
@@ -163,14 +156,14 @@ export const globalData = {
   // ---------------------------------------------------
   results_cta: {
     eyebrow: "Nossos Resultados",
-    title1: "Transformações que",
-    title2: "mudam vidas.", // itálico
+    title1: "Transformamos o",
+    title2: "seu sorriso!",
     p1: "A",
     p_bold1: "excelência do nosso trabalho",
-    p2: "é refletida no sorriso de cada paciente. Explore nossa",
+    p2: "é refletida na qualidade de vida de cada paciente. Explore nossa",
     p_bold2: "galeria de casos clínicos",
     p3: "e conheça o padrão da",
-    p_bold3: "INB Odonto",
+    p_bold3: "Classe A Odontologia",
     btn: "Ver Galeria de Casos",
     imgUrl: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&q=80"
   },
@@ -181,10 +174,10 @@ export const globalData = {
   faq: {
     title: "Perguntas Frequentes",
     list: [
-      { q: "Onde a INB Odonto está localizada?", a: "Estamos no coração de Águas Claras: Intercity Led Office, Torre 2, Sala 210. Um ambiente moderno e de fácil acesso para o seu conforto." },
-      { q: "Quais os sintomas da DTM?", a: "Os sintomas podem incluir dor na mandíbula, dificuldade para abrir ou fechar a boca, estalos na articulação, dores de cabeça e até dor no pescoço. Nossa especialista Dra. Letícia pode ajudar." },
-      { q: "Vocês produzem os próprios alinhadores transparentes?", a: "Sim! Na INB contamos com produção de alinhadores in-office. Isso oferece mais agilidade, precisão, conforto e praticidade durante todo o seu tratamento ortodôntico." },
-      { q: "Qual a idade certa para a primeira consulta das crianças?", a: "A Dra. Clara orienta que a prevenção deve iniciar a partir dos 2 meses de idade, mesmo antes da erupção dos dentes, para orientações de hábitos alimentares e higiene." }
+      { q: "Onde a Classe A Odontologia está localizada?", a: "Estamos na Qr 3, conjunto F, casa 49, na Candangolândia - DF. Oferecemos um ambiente moderno e de fácil acesso para o seu conforto." },
+      { q: "A clínica atende diversas especialidades?", a: "Sim! Nossa equipe multidisciplinar atende Implantes, Canal, Prótese, Ortodontia, Clareamento, Reabilitação Oral e Odontopediatria." },
+      { q: "Qual o horário de funcionamento da clínica?", a: "Atendemos de segunda a sexta-feira, abertos até as 17:00. Entre em contato pelo nosso WhatsApp para verificar a disponibilidade dos especialistas." },
+      { q: "Vocês trabalham com lentes de contato dental?", a: "Trabalhamos com estética completa, incluindo facetas, lentes de contato e clareamentos seguros para transformar a harmonia do seu rosto." }
     ]
   },
 
@@ -193,9 +186,9 @@ export const globalData = {
   // ---------------------------------------------------
   location: {
     eyebrow: "Endereço &\nAcesso",
-    box1: { title: "Edifício", value1: "Intercity Led Office", value2: "Torre 2 — Sala 210" },
-    box2: { title: "Localização", value1: "Águas Claras, Brasília — DF", value2: "Fácil acesso e excelente infraestrutura." },
-    box3: { title: "Comodidades" }, // Puxa do endereco.comodidades
+    box1: { title: "Endereço", value1: "QR 3, Conjunto F, Casa 49", value2: "Candangolândia - DF" },
+    box2: { title: "Localização", value1: "Candangolândia, Brasília", value2: "CEP: 71725-306" },
+    box3: { title: "Comodidades" },
     btn: "Abrir no Google Maps"
   },
 
@@ -205,24 +198,24 @@ export const globalData = {
   contact: {
     eyebrow: "Marque uma Avaliação",
     title1: "Vamos",
-    title2: "conversar?", // Itálico
+    title2: "conversar?",
     desc: "Entre em contato para agendar sua avaliação ou tirar dúvidas. Nossa equipe técnica está pronta para apresentar o seu plano de tratamento.",
     box1_title: "Endereço",
     box2_title: "Contato Direto",
     box3_title: "Mídias",
     box3_desc1: "Acompanhe o nosso dia a dia",
-    box3_desc2: "@inbodonto no Instagram"
+    box3_desc2: "@classeaodontologia no Instagram"
   },
 
   // ---------------------------------------------------
   // SEÇÃO: RODAPÉ
   // ---------------------------------------------------
   footer: {
-    sobre: "Onde seu sorriso é a nossa paixão. Atendimento personalizado e tecnologia em Águas Claras.",
+    sobre: "Sorrisos bonitos, saudáveis e verdadeiros. Transformamos o seu sorriso com ética e tecnologia na Candangolândia.",
     title_tratamentos: "Tratamentos",
     title_contato: "Contato",
-    direitos: "© 2026 INB Odonto. Todos os direitos reservados.",
-    registro: "Águas Claras — Brasília, DF"
+    direitos: "© 2026 Classe A Odontologia. Todos os direitos reservados.",
+    registro: "Candangolândia — Brasília, DF"
   },
 
   // ---------------------------------------------------
@@ -231,19 +224,19 @@ export const globalData = {
   results_page: {
     eyebrow: "Portfólio Clínico",
     title1: "Seu sorriso,",
-    title2: "nossa paixão.", // Itálico
+    title2: "nossa paixão.",
     p1: "Navegue pela nossa",
     p_bold1: "galeria de casos",
     p2: ". O planejamento aliado à nossa",
     p_bold2: "atenção humana e clínica",
-    p3: "em Águas Claras nos permite entregar os melhores resultados estéticos e funcionais.",
+    p3: "na Candangolândia nos permite entregar os melhores resultados estéticos e funcionais.",
     btnSaberMais: "Agendar caso semelhante",
     btnVoltar: "Retornar à página inicial",
     cases: [
-      { category: "Reabilitação Estética", duration: "Planejamento Personalizado", complaint: "Dentes amarelados e desgastados, comprometendo a harmonia do rosto.", procedure: "Transformação do sorriso com facetas de porcelana guiada pela arquitetura facial da paciente.", beforeImg: lentesAntes, afterImg: lentesDepois },
-      { category: "Alinhadores In-Office", duration: "Acompanhamento Contínuo", complaint: "Dentes apinhados e rejeição ao uso de aparelhos metálicos tradicionais.", procedure: "Tratamento ortodôntico 100% invisível utilizando nossa produção própria de alinhadores INB.", beforeImg: alinhamentoAntes, afterImg: alinhamentoDepois },
-      { category: "Clareamento Clínico", duration: "Sessão Rápida", complaint: "Esmalte escurecido e com manchas superficiais ao longo dos anos.", procedure: "Protocolo de clareamento supervisionado para devolver o brilho natural com segurança.", beforeImg: clareamentoAntes, afterImg: clareamentoDepois },
-      { category: "Reabilitação Oral", duration: "Tratamento Integrado", complaint: "Sorriso gengival e resinas antigas escurecidas.", procedure: "Substituição de materiais antigos e plastia gengival para um resultado altamente natural e saudável.", beforeImg: gengivoAntes, afterImg: gengivoDepois }
+      { category: "Reabilitação Estética", duration: "Planejamento Personalizado", complaint: "Dentes amarelados e desgastados, comprometendo a harmonia do rosto.", procedure: "Transformação do sorriso com lentes de contato dental guiada pela arquitetura facial da paciente.", beforeImg: "/imagens/lentes-antes.jpg", afterImg: "/imagens/lentes-depois.jpg" },
+      { category: "Ortodontia", duration: "Acompanhamento Contínuo", complaint: "Dentes apinhados afetando a estética e a função mastigatória.", procedure: "Tratamento ortodôntico completo visando o alinhamento perfeito e saudável dos dentes.", beforeImg: "/imagens/alinhamento-antes.jpg", afterImg: "/imagens/alinhamento-depois.jpg" },
+      { category: "Clareamento Clínico", duration: "Sessão Rápida", complaint: "Esmalte escurecido e com manchas superficiais ao longo dos anos.", procedure: "Protocolo de clareamento supervisionado para devolver o brilho natural com segurança.", beforeImg: "/imagens/clareamento-antes.jpg", afterImg: "/imagens/clareamento-depois.jpg" },
+      { category: "Implantes & Próteses", duration: "Tratamento Integrado", complaint: "Ausência dentária e desgaste severo impactando a fala e alimentação.", procedure: "Reabilitação oral através de carga imediata e prótese, devolvendo conforto e estética.", beforeImg: "/imagens/gengivo-antes.jpg", afterImg: "/imagens/gengivo-depois.jpg" }
     ]
   }
 };

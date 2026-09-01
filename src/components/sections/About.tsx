@@ -12,7 +12,9 @@ export function About({ goTo }: { goTo: (id: string) => void }) {
 
   return (
     <Section id="sobre" style={{ background: "var(--c-bg-alt)" }}>
-      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-16 items-center">
+        
+        {/* BLOCO DE FOTOS INTACTO (Não alterado) */}
         <div className="w-full lg:w-1/2 reveal-l relative">
           <div className="relative w-full aspect-[4/5] md:aspect-[4/4.5] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(var(--c-primary-rgb),0.1)] bg-[var(--c-primary)]">
             {gallery.map((img, idx) => (
@@ -45,30 +47,58 @@ export function About({ goTo }: { goTo: (id: string) => void }) {
           </div>
         </div>
 
-        <div className="w-full lg:w-1/2 flex flex-col justify-center mt-6 lg:mt-0">
+        {/* BLOCO DE TEXTOS REFORMULADO (Mais editorial, espaçoso e acolhedor) */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center mt-12 lg:mt-0 lg:pl-10 xl:pl-14">
           <div className="reveal"><span className="eyebrow">{globalData.about.eyebrow}</span></div>
-          <h2 className="reveal mt-2" style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.4rem, 4vw, 3.8rem)", color: "var(--c-text-main)", marginBottom: "1.5rem" }}>
-            {globalData.about.title1} <br/>{globalData.about.title2}
+          
+          <h2 className="reveal mt-2 mb-8" style={{ ...serif, fontWeight: 400, lineHeight: 1.1, fontSize: "clamp(2.4rem, 4vw, 3.8rem)", color: "var(--c-text-main)" }}>
+            {globalData.about.title1} <br/>
+            <em className="italic text-[var(--c-accent)]">{globalData.about.title2}</em>
           </h2>
           
-          <p className="reveal" style={{ color: "var(--c-text-muted)", lineHeight: 1.85, marginBottom: "1.2rem", fontWeight: 300 }}>{globalData.about.p1}</p>
-          <p className="reveal" style={{ color: "var(--c-text-muted)", lineHeight: 1.85, marginBottom: "2.5rem", fontWeight: 300 }}>
+          {/* Mensagem de Boas-vindas (Estilo Cartão Acolhedor) */}
+          <div className="reveal relative bg-white/50 backdrop-blur-sm border border-white shadow-[0_10px_40px_rgba(30,37,50,0.03)] p-6 md:p-8 rounded-[1.5rem] mb-8">
+            <div className="absolute top-0 left-0 w-2 h-full bg-[var(--c-accent)] rounded-l-[1.5rem] opacity-80" />
+            <p style={{ color: "var(--c-text-main)", fontSize: "1.1rem", lineHeight: 1.7, fontWeight: 400, fontStyle: "italic" }}>
+              "{globalData.about.p1}"
+            </p>
+          </div>
+
+          <p className="reveal" style={{ color: "var(--c-text-muted)", fontSize: "1.05rem", lineHeight: 1.85, marginBottom: "3rem", fontWeight: 300, paddingRight: "1rem" }}>
             {globalData.about.p2_1} <strong className="font-medium text-[var(--c-text-main)]">{globalData.about.p2_bold}</strong> {globalData.about.p2_2}
           </p>
           
-          <div className="reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.4rem", marginBottom: "2.5rem" }}>
+          {/* Grid de Diferenciais Redesenhado */}
+          <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6 mb-12">
             {globalData.about.topics.map((t) => (
-              <div key={t.title} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
-                <div style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--c-accent)", opacity: 1, marginTop: "0.45rem", flexShrink: 0 }} />
+              <div key={t.title} className="flex gap-4 items-start group">
+                <div className="mt-0.5 flex items-center justify-center w-6 h-6 rounded-full bg-white border border-[var(--c-accent)]/40 group-hover:bg-[var(--c-accent)] transition-colors duration-500 shrink-0 shadow-sm">
+                  <svg className="w-3 h-3 text-[var(--c-accent)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
                 <div>
-                  <div style={{ fontSize: ".875rem", fontWeight: 500, color: "var(--c-text-main)" }}>{t.title}</div>
-                  <div style={{ fontSize: ".78rem", color: "var(--c-text-muted)", marginTop: 2, lineHeight: 1.6, fontWeight: 300 }}>{t.desc}</div>
+                  <div style={{ fontSize: "0.95rem", fontWeight: 600, color: "var(--c-text-main)", marginBottom: "0.25rem", letterSpacing: "0.01em" }}>
+                    {t.title}
+                  </div>
+                  <div style={{ fontSize: "0.85rem", color: "var(--c-text-muted)", lineHeight: 1.6, fontWeight: 300 }}>
+                    {t.desc}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="reveal mt-2"><button className="btn-primary" onClick={() => goTo("contato")}>{globalData.about.btn}</button></div>
+          
+          <div className="reveal">
+            <button 
+              className="btn-primary w-full sm:w-auto text-center px-10 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" 
+              onClick={() => goTo("contato")}
+            >
+              {globalData.about.btn}
+            </button>
+          </div>
         </div>
+
       </div>
     </Section>
   );

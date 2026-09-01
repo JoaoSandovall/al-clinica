@@ -3,7 +3,7 @@ import { serif, globalData } from "../../data/content";
 
 export function Location() {
   return (
-    <Section id="localizacao" style={{ background: "white" }}>
+    <Section id="localizacao" style={{ background: "var(--c-bg-alt)" }}>
       <div className="max-w-[1280px] mx-auto">
         <div className="flex flex-col md:flex-row items-stretch border border-[rgba(var(--c-primary-rgb),0.1)] rounded-[2rem] overflow-hidden shadow-sm">
           <div className="w-full md:w-5/12 bg-[var(--c-bg)] p-10 md:p-16 flex flex-col justify-center relative z-10">
